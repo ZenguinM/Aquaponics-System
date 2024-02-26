@@ -1,1 +1,13 @@
+body {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.nitra {
+    background-color: black;
+    display: flex;
+
+    height: 40px;
+}
