@@ -1,0 +1,155 @@
+---AQUAPONICS---
+
+BACKGROUND:     Aquaponics is a combination of aquaculture and hydroponics, which is able to grow both fish and plants.
+PROBLEM:        The Science Faculty need you to create a practical solution to a problem in Biology. For some 
+                time now, a Biology teacher has been trying to get an aquaponics system functioning properly, 
+                but they are experiencing problems maintaining the balance of pH, ammonia, nitrates and nitrites. 
+                The teacher needs a monitoring system that will alert them to variations in the concentrations of
+                any of the variables listed above. They also require a temperature indicator. 
+
+---PLANNING---
+
+1.  Search for fish and plants typically grown in aquaponics in Darwin
+2.  Search water quality parameters and how they affect fish and plants
+3.  Search one fish for the suitable water parameters and note them
+4.  Create a flowchart of how the program should work
+4.  Create a web UI with functionable button
+5.   
+
+---WATER QUALITY PARAMETERS---
+
+    TEMPERATURE:        
+        Description:    Temperature is vital for bacteria and nutrient breakdown and uptake by plants and fish. 
+                        Many factors can affect temperature such as climate, materials, and systems. Generally, 
+                        the water temperature should ranger between 20°C - 30°C, however this differs between
+                        fish, plants, and bacteria. 
+        Effect:         High temperatures can affect a plant's dissolved oxygen, cause wilting, and death. Cold
+                        will affect growth. Fish cannot regulate body temperatures, so knowing the category of
+                        fish is vital (cold, cool, and warm water fish). Optimal temperatures help with health
+                        growth, reduce stress and diseases, and feeding. High temperatures affect metabolism and
+                        oxygen requirements.
+    pH:
+        Description:    pH measures the acidity or alkalinity of the water. It can affect the solubilty and uptake
+                        of nutrients, microbial activity, and system stability. Factors affect pH include fish waste,
+                        plant uptake, carbon dioxide levels, and water quality. Generally, the pH should be around 
+                        6.8 to 7.2.
+        Effect:         Poor pH can result in stunted plant growths and poor yields, nutrient deficiency, toxicity,
+                        increased stress and diseases. Raising pH can be done with calcium carbonate and potassium 
+                        carbonate, water change, or grow media. Lowering pH can be done by cycling the water, or
+                        using acids such as phosphoric acid.
+    NITRATE:
+        Description:    A non-toxic form of nitrogen, which is food for the plants. The nitrogen cycle happens when
+                        when ammonia from fish waste is converted to nitrites, and then into nitrates by bacterium.
+                        Generally, the nitrate level should be areoun 3 to 150 mg/l or 150 ppm.
+        Effect:         It, as well as nitrogen, is necessary for fish and plant growth, and the cycle reduces ammonia
+                        in the system. Proper nitrates maximises yield. Increasing nitrate can be done by adding
+                        more fish, or bacteria. Reducing can be done by adding plants, removing fish, or changing
+                        water.
+    NITRITE:
+        Description:    Intermittent stage between the conversion between ammonia to nitrate. Nitrification is
+                        maximised at atound 25°C to 30°C. This process also reduces pH and uses oxygen. Generally,
+                        nitrites should be at 0 ppm.
+        Effect:         Nitrite above 0.75 ppm can cause stress, above 5 ppm is toxic to fish. It can kill fish by
+                        affecting their oxygen intake, even if the dissolved oxygen is sufficient.
+    AMMONIA:
+        Description:    Excreted by fish, ammonia is the starter for the nitrogen cycle which helps with the plants
+                        at the end. It can also come from fish food. Ammonia and pH levels are usually related; high
+                        ammonia means high pH and vice versa. High oxygen levels help remove ammonia.
+        Effect:         Ammonia poisoning can cause damage to fish, impair fish growth, reduce resistance to diseases,
+                        and death. Removing ammonia can be done through biofilters, reducing nitrogen in the system,
+                        or adjusting feedin rates. Not enough ammonia will affect plant growth, which can be fixed by
+                        adding more fish.
+
+---PLANTS---
+
+    GENERAL:
+        Temperature:    18°C - 30°C
+        pH:             6.0 - 7.0
+        Nitrate:        5 - 150 ppm
+        Nitrite:        0 ppm
+        Ammonia:        0 ppm
+
+---FISH---
+
+    GOLDFISH:
+        Description:    A freshwater fish, typically kept as an indoor pet. They are hardy and come in a variety of shapes and colours.
+        Temperature:    21°C - 24°C
+        pH:             7.0 - 7.5
+        Nitrate:        < 50 ppm (lower may be better)
+        Nitrite:        < 0.2 ppm
+        Ammonia:        < 0.02 ppm
+    TILAPIA:
+        Description:
+        Temperature:
+        pH:
+        Nitrate:
+        Nitrite:
+        Ammonia:
+    BARRAMUNDI:
+        Description:    
+        Temperature:    28°C - 32°C
+                        < 20°C causes increased stress-related deaths and disease outbreaks
+                        < 13°C causes death
+                        > 35°C causes death
+                        27°C - 29°C causes maximum food intake
+                        20°C causes minimum food intake
+        pH:             6.5 - 7.2
+        Nitrate:        
+        Nitrite:        
+        Ammonia:        
+
+---PSEUDOCODE---
+
+(water-para-button).onclick{
+    div(water-para-button).open
+}
+
+input = input("Please input the value of your (water para.) (units))
+if input < min:
+    print("The (water para.) is too low to support the (fish or plant) and will cause death)
+elif input 
+
+---SOURCE---
+
+PLANTS/GENERAL:     https://fisheries.tamu.edu/files/2020/10/Water-Quality-In-Aquaponics-Sink-Masabni.pdf
+FISH/GOLDFISH:      https://aquapona.co.uk/goldfish-aquaponics/
+
+---ASSESSMENT CRITERIA---
+
+It is important that you understand that for this task you will be individually assessed on 4 assessment design criteria, 
+and only one of these is related to the programming component of the task.
+You need to provide evidence of your work completed for each of the criteria. 
+Throughout the task you should keep in mind that you should also be collecting evidence that can be used for Task 4 Iterative Project Development. 
+
+Some examples of evidence for each criteria are listed below:
+    COMPUTATIONAL THINKING:
+
+        CT1	Application of computational thinking concepts and techniques, to identify and deconstruct 	problems of interest
+        •	Clearly outline the problem that needs to be solved.
+        •	Deconstruct the problem into a number of sequential tasks use tools that show dependencies and flow of sequence between parts
+        •	Apply logical thinking to deduce as much information as possible from the initial information. Adjust these steps as new information becomes available.
+
+        CT4	Application of skills and processes to develop solutions to problems of interest
+        •	Create an algorithm using pseudocode, including the use of sequence, selection and iteration
+        •	Test your algorithm for correctness by “desk checking” appropriate examples
+        •	Graphically represent algorithms at a high level of detail using structure charts or flow charts.
+        •	A possible user interface(s), showing how the application will look, including examples of various layouts or outputs
+
+    DEVELOPMENT AND EVALUATION:
+
+        DE1	Design and creation of digital solutions or a prototype
+        •	A user interface that is intuitive and easy to use, requiring minimal inputs frm the user
+        •	Use a software development tool to support code development
+        •	Develop code feature by feature.
+        •	Keep different versions of your code as each feature is added (this will be important for task 4 too)
+        •	Use a range of data structures including numbers, strings, Booleans and arrays, lists and dictionaries
+        •	Use a variety of coding constructs – sequence, selection and iteration 
+        •	Describe code, including comments to enable others to read and understand your code
+        •	Use recommended coding practices such as naming conventions, comments, constants and modularisation. Modularisation can be shown through the use of functions or procedures. 
+
+        DE3	Evaluation of the effectiveness of a digital solution or prototype
+        •	Test code for correctness under a wide variety of conditions and how it reacts to unexpected inputs
+        •	Describe how the application meets the needs of the client
+        •	Identify possible limitations of the code and possible improvements.
+
+
