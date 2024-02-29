@@ -1,20 +1,21 @@
 ---AQUAPONICS---
 
-BACKGROUND:     Aquaponics is a combination of aquaculture and hydroponics, which is able to grow both fish and plants.
-PROBLEM:        The Science Faculty need you to create a practical solution to a problem in Biology. For some 
-                time now, a Biology teacher has been trying to get an aquaponics system functioning properly, 
-                but they are experiencing problems maintaining the balance of pH, ammonia, nitrates and nitrites. 
-                The teacher needs a monitoring system that will alert them to variations in the concentrations of
-                any of the variables listed above. They also require a temperature indicator. 
+    BACKGROUND:     Aquaponics is a combination of aquaculture and hydroponics, which is able to grow both fish
+                    and plants.
+    PROBLEM:        The Science Faculty need you to create a practical solution to a problem in Biology. For some 
+                    time now, a Biology teacher has been trying to get an aquaponics system functioning properly, 
+                    but they are experiencing problems maintaining the balance of pH, ammonia, nitrates and nitrites. 
+                    The teacher needs a monitoring system that will alert them to variations in the concentrations of
+                    any of the variables listed above. They also require a temperature indicator. 
 
 ---PLANNING---
 
-1.  Search for fish and plants typically grown in aquaponics in Darwin
-2.  Search water quality parameters and how they affect fish and plants
-3.  Search one fish for the suitable water parameters and note them
-4.  Create a flowchart of how the program should work
-4.  Create a web UI with functionable button
-5.   
+    1.  Search for fish and plants typically grown in aquaponics in Darwin
+    2.  Search water quality parameters and how they affect fish and plants
+    3.  Search one fish for the suitable water parameters and note them
+    4.  Create a flowchart of how the program should work
+    5.  Create a web UI with functionable button
+    6.   
 
 ---WATER QUALITY PARAMETERS---
 
@@ -72,7 +73,8 @@ PROBLEM:        The Science Faculty need you to create a practical solution to a
 ---FISH---
 
     GOLDFISH:
-        Description:    A freshwater fish, typically kept as an indoor pet. They are hardy and come in a variety of shapes and colours.
+        Description:    A freshwater fish, typically kept as an indoor pet. They are hardy and come in a variety of
+                        shapes and colours.
         Temperature:    21°C - 24°C
         pH:             7.0 - 7.5
         Nitrate:        < 50 ppm (lower may be better)
@@ -98,58 +100,46 @@ PROBLEM:        The Science Faculty need you to create a practical solution to a
         Nitrite:        
         Ammonia:        
 
----PSEUDOCODE---
-
-(water-para-button).onclick{
-    div(water-para-button).open
-}
-
-input = input("Please input the value of your (water para.) (units))
-if input < min:
-    print("The (water para.) is too low to support the (fish or plant) and will cause death)
-elif input 
-
----SOURCE---
-
-PLANTS/GENERAL:     https://fisheries.tamu.edu/files/2020/10/Water-Quality-In-Aquaponics-Sink-Masabni.pdf
-FISH/GOLDFISH:      https://aquapona.co.uk/goldfish-aquaponics/
-
 ---ASSESSMENT CRITERIA---
 
-It is important that you understand that for this task you will be individually assessed on 4 assessment design criteria, 
-and only one of these is related to the programming component of the task.
-You need to provide evidence of your work completed for each of the criteria. 
-Throughout the task you should keep in mind that you should also be collecting evidence that can be used for Task 4 Iterative Project Development. 
+    It is important that you understand that for this task you will be individually assessed on 4 assessment design
+    criteria, and only one of these is related to the programming component of the task. You need to provide evidence
+    of your work completed for each of the criteria. Throughout the task you should keep in mind that you should also
+    be collecting evidence that can be used for Task 4 Iterative Project Development. 
 
-Some examples of evidence for each criteria are listed below:
+    Some examples of evidence for each criteria are listed below:
+
     COMPUTATIONAL THINKING:
-
-        CT1	Application of computational thinking concepts and techniques, to identify and deconstruct 	problems of interest
-        •	Clearly outline the problem that needs to be solved.
-        •	Deconstruct the problem into a number of sequential tasks use tools that show dependencies and flow of sequence between parts
-        •	Apply logical thinking to deduce as much information as possible from the initial information. Adjust these steps as new information becomes available.
+        CT1	Application of computational thinking concepts and techniques, to identify and deconstruct problems of
+        interest
+            •	Clearly outline the problem that needs to be solved.
+            •	Deconstruct the problem into a number of sequential tasks use tools that show dependencies and
+                flow of sequence between parts
+            •	Apply logical thinking to deduce as much information as possible from the initial information.
+                Adjust these steps as new information becomes available.
 
         CT4	Application of skills and processes to develop solutions to problems of interest
-        •	Create an algorithm using pseudocode, including the use of sequence, selection and iteration
-        •	Test your algorithm for correctness by “desk checking” appropriate examples
-        •	Graphically represent algorithms at a high level of detail using structure charts or flow charts.
-        •	A possible user interface(s), showing how the application will look, including examples of various layouts or outputs
+            •	Create an algorithm using pseudocode, including the use of sequence, selection and iteration
+            •	Test your algorithm for correctness by “desk checking” appropriate examples
+            •	Graphically represent algorithms at a high level of detail using structure charts or flow charts.
+            •	A possible user interface(s), showing how the application will look, including examples of various
+                layouts or outputs
 
     DEVELOPMENT AND EVALUATION:
-
         DE1	Design and creation of digital solutions or a prototype
-        •	A user interface that is intuitive and easy to use, requiring minimal inputs frm the user
-        •	Use a software development tool to support code development
-        •	Develop code feature by feature.
-        •	Keep different versions of your code as each feature is added (this will be important for task 4 too)
-        •	Use a range of data structures including numbers, strings, Booleans and arrays, lists and dictionaries
-        •	Use a variety of coding constructs – sequence, selection and iteration 
-        •	Describe code, including comments to enable others to read and understand your code
-        •	Use recommended coding practices such as naming conventions, comments, constants and modularisation. Modularisation can be shown through the use of functions or procedures. 
+            •	A user interface that is intuitive and easy to use, requiring minimal inputs frm the user
+            •	Use a software development tool to support code development
+            •	Develop code feature by feature.
+            •	Keep different versions of your code as each feature is added (this will be important for task 4 too)
+            •	Use a range of data structures including numbers, strings, Booleans and arrays, lists and dictionaries
+            •	Use a variety of coding constructs – sequence, selection and iteration 
+            •	Describe code, including comments to enable others to read and understand your code
+            •	Use recommended coding practices such as naming conventions, comments, constants and modularisation.
+                Modularisation can be shown through the use of functions or procedures. 
 
         DE3	Evaluation of the effectiveness of a digital solution or prototype
-        •	Test code for correctness under a wide variety of conditions and how it reacts to unexpected inputs
-        •	Describe how the application meets the needs of the client
-        •	Identify possible limitations of the code and possible improvements.
+            •	Test code for correctness under a wide variety of conditions and how it reacts to unexpected inputs
+            •	Describe how the application meets the needs of the client
+            •	Identify possible limitations of the code and possible improvements.
 
 
