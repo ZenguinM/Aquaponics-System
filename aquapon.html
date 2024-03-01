@@ -11,12 +11,29 @@
         
     </div>
     <div class="para-nav">
-        <button class="nitra">Nitrate</button>
-        <button class="nitri">Nitrite</button>
-        <button class="temp">Temperature</button>
-        <button class="ph">pH</button>
-        <button class="ammo">Ammonia</button>
+        <button class="tablink" onclick="openPara('temp', this, 'red')">Temperature</button>
+        <button class="tablink" onclick="openPara('ph', this, 'orange')">pH</button>
+        <button class="tablink" onclick="openPara('nitra', this, 'yellow')">Nitrate</button>
+        <button class="tablink" onclick="openPara('nitri', this, 'lightgreen')">Nitrite</button>
+        <button class="tablink" onclick="openPara('ammo', this, 'lightblue')">Ammonia</button>
+
+        <div class="tabcontent" id="temp">
+            <h3>Temperature</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut error nihil, quae magnam dolores, ducimus obcaecati voluptatem delectus, repellat ad dolorem perferendis aliquid vitae officiis saepe ipsam id dolor modi?</p>
+        </div>
+        <div class="tabcontent" id="ph">
+            <h3>pH</h3>
+        </div>
+        <div class="tabcontent" id="nitra">
+            <h3>Nitrate</h3>
+        </div>
+        <div class="tabcontent" id="nitri">
+            <h3>Nitrite</h3>
+        </div>
+        <div class="tabcontent" id="ammo">
+            <h3>Ammonia</h3>
+        </div>
     </div>
-    <script src="aquapon.js" type="module"></script>
 </body>
+<script src="aquapon.js" type="module"></script>
 </html>
