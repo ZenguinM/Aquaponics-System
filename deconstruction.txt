@@ -96,9 +96,9 @@
                         27°C - 29°C causes maximum food intake
                         20°C causes minimum food intake
         pH:             6.5 - 7.2
-        Nitrate:        
-        Nitrite:        
-        Ammonia:        
+        Nitrate:        < 0.5 ppm
+        Nitrite:        0 ppm
+        Ammonia:        < 0.5 ppm
 
 ---ASSESSMENT CRITERIA---
 

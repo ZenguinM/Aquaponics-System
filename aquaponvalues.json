@@ -1,0 +1,50 @@
+{
+
+    "parameter": {
+
+        "Temperature": {
+            "description": "Temperature is vital for bacteria and nutrient breakdown and uptake by plants and fish. Many factors can affect temperature such as climate, materials, and systems. Generally, the water temperature should ranger between 20°C - 30°C, however this differs between fish, plants, and bacteria.",
+            "effect": "High temperatures can affect a plant's dissolved oxygen, cause wilting, and death. Cold will affect growth. Fish cannot regulate body temperatures, so knowing the category of fish is vital (cold, cool, and warm water fish). Optimal temperatures help with health growth, reduce stress and diseases, and feeding. High temperatures affect metabolism and oxygen requirements."
+        },
+
+        "pH": {
+            "description": "pH measures the acidity or alkalinity of the water. It can affect the solubilty and uptake of nutrients, microbial activity, and system stability. Factors affect pH include fish waste, plant uptake, carbon dioxide levels, and water quality. Generally, the pH should be around 6.8 to 7.2.",
+            "effect": "Poor pH can result in stunted plant growths and poor yields, nutrient deficiency, toxicity, increased stress and diseases. Raising pH can be done with calcium carbonate and potassium carbonate, water change, or grow media. Lowering pH can be done by cycling the water, or using acids such as phosphoric acid."
+        },
+
+        "Nitrate": {
+            "description": "A non-toxic form of nitrogen, which is food for the plants. The nitrogen cycle happens when ammonia from fish waste is converted to nitrites, and then into nitrates by bacterium. Generally, the nitrate level should be around 3 to 150 mg/L or ppm, both units are equal in measurement.",
+            "effect": "It, as well as nitrogen, is necessary for fish and plant growth, and the cycle reduces ammonia in the system. Proper nitrates maximises yield. Increasing nitrate can be done by adding more fish, or bacteria. Reducing can be done by adding plants, removing fish, or changing water."
+        },
+
+        "Nitrite": {
+            "description": "Intermittent stage between the conversion between ammonia to nitrate. Nitrification is maximised at atound 25°C to 30°C. This process also reduces pH and uses oxygen. Generally, nitrites should be at 0 ppm.",
+            "effect": "Nitrite above 0.75 ppm can cause stress, above 5 ppm is toxic to fish. It can kill fish by affecting their oxygen intake, even if the dissolved oxygen is sufficient."
+        },
+
+        "Ammonia": {
+            "description": "Excreted by fish, ammonia is the starter for the nitrogen cycle which helps with the plants at the end. It can also come from fish food. Ammonia and pH levels are usually related; high ammonia means high pH and vice versa. High oxygen levels help remove ammonia.",
+            "effect": "Ammonia poisoning can cause damage to fish, impair fish growth, reduce resistance to diseases, and death. Removing ammonia can be done through biofilters, reducing nitrogen in the system, or adjusting feedin rates. Not enough ammonia will affect plant growth, which can be fixed by adding more fish."
+        }
+    },
+
+    "plant": {},
+
+    "fish": {
+
+        "Barramundi": {
+            "description": "Brackish fishy",
+            "temperature": [28,32],
+            "ph": [6.5,7.2],
+            "nitrate": 0.5,
+            "nitrite": 0,
+            "ammonia": 0.5
+        },
+        
+        "Tilapia": {
+            "description": "Fishy"
+        }
+
+    }
+
+}
