@@ -4,27 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="aquapon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
     <title>Aquaponics System</title>
 </head>
 <body id="bg">
     <div class="fish-nav">
-        
+        <button class="fishlink" id="Barramundi">Barramundi</button>
+        <button class="fishlink" id="Tilapia">Tilapia</button>
+        <button class="fishlink" id="Placeholder">Placeholder</button>
+        <button class="fishlink" id="Custom">Custom (.xlsm)</button>
     </div>
-    <!--
     <div class="para-nav">
-        <button class="tablink" onclick="openPara('temp', this, 'red')" id="default">Temperature</button>
-        <button class="tablink" onclick="openPara('ph', this, 'orange')">pH</button>
-        <button class="tablink" onclick="openPara('nitra', this, 'yellow')">Nitrate</button>
-        <button class="tablink" onclick="openPara('nitri', this, 'lightgreen')">Nitrite</button>
-        <button class="tablink" onclick="openPara('ammo', this, 'lightblue')">Ammonia</button>
-    </div>
-    --->
-    <div class="para-nav">
-        <button class="tablink" id="Temperature">Temperature</button>
-        <button class="tablink" id="pH">pH</button>
-        <button class="tablink" id="Nitrate">Nitrate</button>
-        <button class="tablink" id="Nitrite">Nitrite</button>
-        <button class="tablink" id="Ammonia">Ammonia</button>
+        <button class="paralink" id="Temperature">Temperature</button>
+        <button class="paralink" id="pH">pH</button>
+        <button class="paralink" id="Nitrate">Nitrate</button>
+        <button class="paralink" id="Nitrite">Nitrite</button>
+        <button class="paralink" id="Ammonia">Ammonia</button>
     </div>
     <div class="content" id="content">
         <div class="info" id="info">
@@ -38,25 +35,6 @@
             <p>Your results will be here...</p>
         </div>
     </div>
-    <!--
-    <div class="content">
-        <div class="tabcontent" id="temp">
-            <h3>Temperature</h3>
-        </div>
-        <div class="tabcontent" id="ph">
-            <h3>pH</h3>
-        </div>
-        <div class="tabcontent" id="nitra">
-            <h3>Nitrate</h3>
-        </div>
-        <div class="tabcontent" id="nitri">
-            <h3>Nitrite</h3>
-        </div>
-        <div class="tabcontent" id="ammo">
-            <h3>Ammonia</h3>
-        </div>
-    </div>
-    -->
     <script src="./aquapon.js" type="module"></script>
 </body>
 </html>

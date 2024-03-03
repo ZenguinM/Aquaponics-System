@@ -1,28 +1,59 @@
 body,html {
     background-image: linear-gradient(rgb(126, 208, 235),rgb(47, 90, 176));
     height: 100%;
+    margin: 10px;
+    font-family: "Comfortaa";
 }
-.para-nav {
-    margin: 1% 1% 0 1%;
+.para-nav, .fish-nav {
+    margin: 0 1% 0 1%;
     display: block;
     height: 60px;
 }
-.tablink {
-    background-color: grey;
+.fishlink {
+    background-color: rgb(80,80,80);
     color: white;
     border: 2px solid black;
     border-radius: 20px 20px 0 0;
     cursor: pointer;
     padding: 15px 15px;
     float: left;
-    font-size: 20px;
+    font-size: 30px;
+    width: 25%;
+    height: 100%;
+    border-bottom-width: 2px;
+    font-family: "Comfortaa";
+    font-weight: bold;
+    transition: background-color 0.1s;
+}
+.fishlink:hover {
+    background-color: rgb(120, 120, 120);
+}
+.fishlink:active {
+    background-color: rgb(180, 180, 180);
+}
+.paralink {
+    color: white;
+    background-color: rgb(80,80,80);
+    border: 2px solid black;
+    border-radius: 20px 20px 0 0;
+    cursor: pointer;
+    padding: 15px 15px;
+    float: left;
+    font-size: 30px;
     width: 20%;
     height: 100%;
     border-bottom-width: 2px;
+    font-family: "Comfortaa";
+    font-weight: bold;
+    transition: background-color 0.1s;
 }
-.tablink:hover {
-    background-color: rgb(92, 92, 92);
-}
+
+#Temperature:hover {background-color: rgb(128, 0, 0);}
+#pH:hover {background-color: rgb(128, 83, 0);}
+#Nitrate:hover {background-color: rgb(128, 128, 0);}
+#Nitrite:hover {background-color: rgb(0, 128, 0);}
+#Ammonia:hover {background-color: rgb(0, 101, 135);}
+
 .content {
     margin: -5px 1%;
     display: block;
@@ -56,8 +87,3 @@ body,html {
     width: max-content;
 }
 
-#Temperature {background-color: rgb(128, 0, 0);}
-#pH {background-color: rgb(128, 83, 0);}
-#Nitrate {background-color: rgb(128, 128, 0);}
-#Nitrite {background-color: rgb(0, 128, 0);}
-#Ammonia {background-color: rgb(0, 101, 135);}

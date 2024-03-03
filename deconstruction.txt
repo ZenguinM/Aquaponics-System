@@ -89,7 +89,7 @@
         Ammonia:
     BARRAMUNDI:
         Description:    
-        Temperature:    28°C - 32°C
+        Temperature:    28°C - 32°C (optimal)
                         < 20°C causes increased stress-related deaths and disease outbreaks
                         < 13°C causes death
                         > 35°C causes death

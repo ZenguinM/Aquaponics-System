@@ -5,15 +5,16 @@ const enter = document.getElementById("valueEnter");
 const input = document.getElementById("valueInput");
 const output = document.getElementById("valueOutput");
 var paraId;
-const buttonPara = document.querySelectorAll('.tablink');
+const buttonPara = document.querySelectorAll('.paralink');
 
 
 buttonPara.forEach(link => {
     link.addEventListener('click', function() {
         paraId = this.id;
-        const bgcolor = (window.getComputedStyle(this)).backgroundColor;
-        info.style.backgroundColor = bgcolor;
-        content.style.backgroundColor = bgcolor;
+        info.style.backgroundColor = (window.getComputedStyle(this)).backgroundColor;
+        content.style.backgroundColor = (window.getComputedStyle(this)).backgroundColor;
+        buttonPara.style.backgroundColor = "rgb(80,80,80)";
+        this.style.backgroundColor = (window.getComputedStyle(this)).backgroundColor;
         info.innerHTML = `<h1>${paraId}</h1>\
         ${data.parameter[paraId].description}<br><br>\
         ${data.parameter[paraId].effect}<br><br>`
