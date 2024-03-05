@@ -33,18 +33,53 @@
     "fish": {
 
         "Barramundi": {
-            "description": "Brackish fishy",
+            "description": "<h1>Barramundi</h1>The barramundi (<i>Lates calcarifer</i>), which also goes by the names Asian sea bass, giant perch, or giant sea perch, is a versatile fish found in the tropical waters of the Indo-Pacific region. They have excellent flavour and texture on top of being hardy and adaptable, making it an ideal candidate for an aquaponics system. <br><br> They can live in brackish and freshwater waters, and are simple creatures to take care of (relatively speaking). They grow fast and tolerate wide ranges of water conditions. Their meat is used in a various dishes and provide a buttery flavour with firm texture.",
             "temperature": [28,32],
             "ph": [6.5,7.2],
-            "nitrate": 0.5,
+            "nitrate": [20, 80],
             "nitrite": 0,
             "ammonia": 0.5
         },
         
-        "Tilapia": {
-            "description": "Fishy"
+        "Murray Cod": {
+            "description": "<h1>Murray Cod</h1>The murray cod is: dam tasty",
+            "temperature": [24,29],
+            "ph": [6.5, 8.5],
+            "nitrate": [20, 80],
+            "nitrite": 0,
+            "ammonia": 0.1
+        },
+
+        "Silver Perch": {
+            "description": "<h1>Silver Perch</h1> The silver perch isn't actually made of silver, but fish.",
+            "temperature": [0,1],
+            "ph": [0,1],
+            "nitrate": [0,1],
+            "nitrite": 0,
+            "ammonia": 0
+        },
+
+        "Rainbow Trout": {
+            "description": "<h1>Rainbow Trout</h1> The rainbow trout can be found using a gaydar (new word for you, maybe).",
+            "temperature": [0,1],
+            "ph": [0,1],
+            "nitrate": [0,1],
+            "nitrite": 0,
+            "ammonia": 0
+        },
+
+        "Catfish": {
+            "description": "<h1>Catfish</h1> The catfish are often eebies and neebies to sleeby. They will very rarely meow if you leave them long enough. Trust me, you're not the one going crazy...",
+            "temperature": [0,1],
+            "ph": [0,1],
+            "nitrate": [0,1],
+            "nitrite": 0,
+            "ammonia": 0
+        },
+
+        "Custom":{
+            "description": "<h1>Custom</h1> Ultimate custom aquaponics. Anyways, this is something that will require research."
+
         }
-
     }
-
 }
