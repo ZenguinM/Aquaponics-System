@@ -71,18 +71,9 @@
         Ammonia:        0 ppm
 
 ---FISH---
-
-    GOLDFISH:
-        Description:    A freshwater fish, typically kept as an indoor pet. They are hardy and come in a variety of
-                        shapes and colours.
-        Temperature:    21°C - 24°C
-        pH:             7.0 - 7.5
-        Nitrate:        < 50 ppm (lower may be better)
-        Nitrite:        < 0.2 ppm
-        Ammonia:        < 0.02 ppm
     TILAPIA:
-        Description:
-        Temperature:
+        Description:    
+        Temperature:    
         pH:
         Nitrate:
         Nitrite:
