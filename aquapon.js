@@ -16,18 +16,13 @@ buttonFish.forEach(fish => {
         output.innerHTML = "Awaiting value...";
         output.style.backgroundColor = "rgb(255,255,255,0.5)";
         desc.innerHTML = `${data.fish[fishId].description}`;
-
     })
 });
 
 buttonPara.forEach(link => {
     link.addEventListener('click', function() {
-        var i, buttonParaNum;
+        var i;
         paraId = this.id;
-        info.style.backgroundColor = (window.getComputedStyle(this)).backgroundColor;
-        content.style.backgroundColor = (window.getComputedStyle(this)).backgroundColor;
-        //buttonPara.style.backgroundColor = "rgb(80,80,80)";
-        //this.style.backgroundColor = (window.getComputedStyle(this)).backgroundColor;
         info.innerHTML = `<h1>${paraId}</h1>\
         ${data.parameter[paraId].description}<br><br>\
         ${data.parameter[paraId].effect}<br><br>`
@@ -43,23 +38,27 @@ buttonPara.forEach(link => {
             buttonPara[i].style.backgroundColor = "rgb(80,80,80)";
         };
 
-
         if (paraId == "Temperature") {
             enter.innerHTML = "Enter temperature (°C) below:<br><br>"
-            link.style.backgroundColor = "rgb(128, 0, 0)";
+            content.style.backgroundColor = "rgb(128, 0, 0)";
+            this.style.backgroundColor = "rgb(128, 0, 0)";
         } else if (paraId == "pH") {
             enter.innerHTML = "Enter pH below:<br><br>";
+            content.style.backgroundColor = "rgb(128, 83, 0)";
             link.style.backgroundColor = "rgb(128, 83, 0)";
         } else if (paraId == "Nitrate") {
             enter.innerHTML = "Enter nitrate level (ppm or mg/L) below:<br><br>";
+            content.style.backgroundColor = "rgb(128, 128, 0)";
             link.style.backgroundColor = "rgb(128, 128, 0)";
         } else if (paraId == "Nitrite") {
             enter.innerHTML = "Enter nitrite level (ppm) below:<br><br>";
+            content.style.backgroundColor = "rgb(0, 128, 0)";
             link.style.backgroundColor = "rgb(0, 128, 0)";
         } else if (paraId == "Ammonia") {
             enter.innerHTML = "Enter ammonia level (ppm) below:<br><br>";
+            content.style.backgroundColor = "rgb(0, 101, 135)";
             link.style.backgroundColor = "rgb(0, 101, 135)";
-        }
+        };
     });
 })
 
