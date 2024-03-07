@@ -1,18 +1,42 @@
 body,html {
-    background-image: linear-gradient(rgb(126, 208, 235),rgb(47, 90, 176));
-    height: 100%;
+    background-color: lightblue;
     margin: 10px;
     font-family: "Comfortaa";
     font-size: 15px;
+    height: 1500px;
+}
+.hide {
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: lightblue;
+    z-index: 5;
+    text-align: center;
+}
+.hide p {
+    font-size: 30px;
+    margin: 10px auto 0 auto;
 }
 .para-nav, .fish-nav {
     margin: 0 1% 0 1%;
     display: block;
     height: 50px;
+    z-index: 6;
+}
+.para-nav {
+    background-color: black;
 }
 .fish-nav {
-    position: fixed;
-    top: 10px;
+    position: sticky;
+    top: 50px;
+    left: 10px;
+    right: 10px;
+}
+.para-nav {
+    position: sticky;
+    top: 100px;
     left: 10px;
     right: 10px;
 }
@@ -30,7 +54,8 @@ body,html {
     border-bottom-width: 2px;
     font-family: "Comfortaa";
     font-weight: bold;
-    transition: background-color 0.1s;
+    transition: background-color 0.1s, color 0.1s;
+
 }
 .fishlink:hover {
     background-color: rgb(120, 120, 120);
@@ -61,15 +86,25 @@ body,html {
 #Nitrite:hover {background-color: rgb(0, 128, 0);}
 #Ammonia:hover {background-color: rgb(0, 101, 135);}
 
-.content, .desc-tab {
-    margin: -20px 1%;
+.desc-tab {
+    margin: 0 1%;
     display: block;
     color: white;
-    padding: 20px 20px 50px 20px;
+    padding: 25px 20px 50px 20px;
     border: 2px solid black;
     background-color: rgb(0, 0, 0);
     transition: background-color 0.1s;
 }
+.content {
+    margin: 0 1%;
+    display: block;
+    color: white;
+    padding: 10px 20px 50px 20px;
+    border: 2px solid black;
+    background-color: rgb(0, 0, 0);
+    transition: background-color 0.1s;
+}
+
 .info {
     display: block;
 }

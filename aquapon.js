@@ -11,11 +11,20 @@ const buttonFish = document.querySelectorAll('.fishlink');
 
 buttonFish.forEach(fish => {
     fish.addEventListener('click', function() {
+        var i;
         fishId = this.id;
         input.value = "";
         output.innerHTML = "Awaiting value...";
         output.style.backgroundColor = "rgb(255,255,255,0.5)";
         desc.innerHTML = `${data.fish[fishId].description}`;
+
+        for (i = 0; i < buttonFish.length; i++) {
+            buttonFish[i].style.backgroundColor = "rgb(80,80,80)";
+            buttonFish[i].style.color = "white";
+        };
+
+        fish.style.backgroundColor = "white";
+        fish.style.color = "black";
     })
 });
 
@@ -41,7 +50,7 @@ buttonPara.forEach(link => {
         if (paraId == "Temperature") {
             enter.innerHTML = "Enter temperature (°C) below:<br><br>"
             content.style.backgroundColor = "rgb(128, 0, 0)";
-            this.style.backgroundColor = "rgb(128, 0, 0)";
+            link.style.backgroundColor = "rgb(128, 0, 0)";
         } else if (paraId == "pH") {
             enter.innerHTML = "Enter pH below:<br><br>";
             content.style.backgroundColor = "rgb(128, 83, 0)";
