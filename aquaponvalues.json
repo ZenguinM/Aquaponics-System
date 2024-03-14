@@ -24,7 +24,7 @@
 
         "Ammonia": {
             "description": "Excreted by fish, ammonia is the starter for the nitrogen cycle which helps with the plants at the end. It can also come from fish food. Ammonia and pH levels are usually related; high ammonia means high pH and vice versa. High oxygen levels help remove ammonia.",
-            "effect": "Ammonia poisoning can cause damage to fish, impair fish growth, reduce resistance to diseases, and death. Removing ammonia can be done through biofilters, reducing nitrogen in the system, or adjusting feedin rates. Not enough ammonia will affect plant growth, which can be fixed by adding more fish."
+            "effect": "Ammonia poisoning can cause damage to fish, impair fish growth, reduce resistance to diseases, and death. Removing ammonia can be done through biofilters, reducing nitrogen in the system, or adjusting feedin rates. Not enough ammonia will affect plant growth, which can be fixed by adding more fish. Be aware that 0 ammonia is optimal for all fish, but having a small amount (like 0.1 ppm small) is usually ok."
         }
     },
 
@@ -33,48 +33,53 @@
     "fish": {
 
         "Barramundi": {
-            "description": "<h1>Barramundi</h1>The barramundi (<i>Lates calcarifer</i>), which also goes by the names Asian sea bass, giant perch, or giant sea perch, is a versatile fish found in the tropical waters of the Indo-Pacific region. They have excellent flavour and texture on top of being hardy and adaptable, making it an ideal candidate for an aquaponics system. <br><br> They can live in brackish and freshwater waters, and are simple creatures to take care of (relatively speaking). They grow fast and tolerate wide ranges of water conditions. Their meat is used in a various dishes and provide a buttery flavour with firm texture.",
-            "temperature": [28,32],
-            "ph": [6.5,7.2],
-            "nitrate": [20, 80],
-            "nitrite": 0,
-            "ammonia": 0.5
+            "description": "<h1>Barramundi</h1>The barramundi (<i>Lates calcarifer</i>), which also goes by the names Asian sea bass, giant perch, or giant sea perch, is a versatile fish found in the tropical waters of the Indo-Pacific region. They have excellent flavour and texture and their meat is used in a various dishes and provide a buttery flavour with firm texture.<br><br> They are hardy and adaptable, making it an ideal candidate for an aquaponics system. They can live in brackish and freshwater waters, and are simple creatures to take care of (relatively speaking). They grow fast and tolerate wide ranges of water conditions. Barramundi can be aggressive with other fishes, including barramundi which could lead to cannabalism. ",
+            "image": "./images/Barramundi.png",
+            "addinfo": "Barramundi are adaptable to a range of temperatures. Optimally, their temperature should range from <b>28°C to 32°C</b>. Outside of this range is still okay to a degree. Less than <b>20°C</b> causes increased stress-related issues and disease outbreaks. <b>Greater than 35°C</b> or <b>lower than 13°C</b> will cause death.",
+            "Temperature": [28,32],
+            "pH": [6.5,7.2],
+            "Nitrate": [20, 80],
+            "Nitrite": [0, 0],
+            "Ammonia": [0, 0.5]
         },
         
         "Murray Cod": {
-            "description": "<h1>Murray Cod</h1>The murray cod is: dam tasty",
-            "temperature": [24,29],
-            "ph": [6.5, 8.5],
-            "nitrate": [20, 80],
-            "nitrite": 0,
-            "ammonia": 0.1
+            "description": "<h1>Murray Cod</h1>The murray cod (<i>Maccullochella peelii</i>) is also commonly called Goodoo, Codfish, and Greenfish. This iconic fish is the largest freshwater fish in Australia and are common in the, fittingly named, Murray-Darling Basin. They're distributed all around New South Wales and in nearby parts of South Australia, Queensland, and Victoria. With firm texture and mild taste, it is versatile in dishes. <br><br>Murray cod can grow quickly and are an aggressive and territorial fish. Avoiding cannabalism is vital by keeping the ones of the same size together. Being freshwater, high salinity cannot be tolerated. They can be susceptible to fungal and bacterial infecitons when crowded so water quality must be strictly maintained. ",
+            "Temperature": [18,26],
+            "addinfo": "Murray cod are cool idk much about them yet uhh...",
+            "pH": [6,8],
+            "Nitrate": [20,80],
+            "Nitrite": [0,0],
+            "Ammonia": [0,0.1]
         },
 
-        "Silver Perch": {
+        "Jade Perch": {
             "description": "<h1>Silver Perch</h1> The silver perch isn't actually made of silver, but fish.",
-            "temperature": [0,1],
-            "ph": [0,1],
-            "nitrate": [0,1],
-            "nitrite": 0,
-            "ammonia": 0
+            "Temperature": [0,1],
+            "addinfo": "Jade perch are NOT made of Jade. Are you insane??",
+            "pH": [0,1],
+            "Nitrate": [0,1],
+            "Nitrite": [0,0],
+            "Ammonia": [0,0]
         },
 
         "Rainbow Trout": {
-            "description": "<h1>Rainbow Trout</h1> The rainbow trout can be found using a gaydar (new word for you, maybe).",
-            "temperature": [0,1],
-            "ph": [0,1],
-            "nitrate": [0,1],
-            "nitrite": 0,
-            "ammonia": 0
+            "description": "<h1>Rainbow Trout</h1> The rainbow trout (<i>Oncorhynchus mykiss</i>) is actually native to North America but can be found in the South-Eastern waters of Australia. If it isn't obvious enough from the name, their silverly skin can sometimes reflect blue, green, and yellowish hues. However, their distict feature is a red or pink band on their bodies. Its great taste is another selling factor.<br><br>In an aquaponics system, they need clean, cold, and oxygenated water that simulates their natural habitat, though they are adaptable. Trout can live in brackish and fresh waters. They are hardy, grow quickly, and provide great nutrients for plants. They are carnivorous so high protein diets are required for healthy fish.",
+            "Temperature": [13,16],
+            "addinfo": "As cold-blooded fishies, they require cold temperature water. Their optimal temperature ranges between <b>13°C to 16°C</b> but can go as low as <b>10°C</b> if you are planning on breeding rainbow trouts (ooh lah lah). <b>Greater than 21°C</b> will affect their growth rates negatively.",
+            "pH": [6.7,8.2],
+            "Nitrate": [40,110],
+            "Nitrite": [0,0],
+            "Ammonia": [0,0]
         },
 
         "Catfish": {
-            "description": "<h1>Catfish</h1> The catfish are often eebies and neebies to sleeby. They will very rarely meow if you leave them long enough. Trust me, you're not the one going crazy...",
-            "temperature": [0,1],
-            "ph": [0,1],
-            "nitrate": [0,1],
-            "nitrite": 0,
-            "ammonia": 0
+            "description": "<h1>Catfish</h1> Catfish refers to a diverse group of fish that are distictly named for their barbels, resembling that of a cat's whiskers. The most common catfish native to Australia is the freshwater catfish, or the eel-tailed catfish (<i>Tandanus tandanus </i>). They often have an apparent 'muddy' taste if they are farmed, but there are ways to make them taste better. <br><br>Because there are many types of catfish, it is important to check what the exact parameters are suitable for the specific catfish. Catfish collectively are perfect for beginners because they are hardy and can tolerate wider ranges of pH, temperature, and others. Their nutrient-rich waste is perfect for plants and can survive with little intervention.",
+            "Temperature": [18,23],
+            "pH": [5,7],
+            "Nitrate": [20,80],
+            "Nitrite": [0,0],
+            "Ammonia": [0,0.5]
         },
 
         "Custom":{

@@ -1,5 +1,6 @@
 import data from "./aquaponvalues.json" assert {type: "json"};
 const info = document.getElementById("info");
+const addInfo = document.getElementById("addInfo");
 const desc = document.getElementById("descTab");
 const content = document.getElementById("content");
 const enter = document.getElementById("valueEnter");
@@ -9,25 +10,44 @@ var paraId, fishId;
 const buttonPara = document.querySelectorAll('.paralink');
 const buttonFish = document.querySelectorAll('.fishlink');
 
-buttonFish.forEach(fish => {
-    fish.addEventListener('click', function() {
-        var i;
-        fishId = this.id;
-        input.value = "";
-        output.innerHTML = "Awaiting value...";
-        output.style.backgroundColor = "rgb(255,255,255,0.5)";
-        desc.innerHTML = `${data.fish[fishId].description}`;
+function imageUpdate(source){
+    image.src = source
+    console.log(source)
+}
+console.log(data)
+//Checks all fish selection buttons and runs the function based on which one is chosen
+document.addEventListener('DOMContentLoaded', function() {
+    buttonFish.forEach(fish => {
+        fish.addEventListener('click', function() {
+            var i;
+            fishId = this.id;
+            input.value = "";
+            output.innerHTML = "Awaiting value...";
+            output.style.backgroundColor = "rgb(255,255,255,0.5)";
+            desc.innerHTML = `${data.fish[fishId].description}`;
+            addInfo.innerHTML = `${data.fish[fishId].addinfo}`;
+            
+            //Iterates through all buttons to change the background colour to grey and text to white
+            for (i = 0; i < buttonFish.length; i++) {
+                buttonFish[i].style.backgroundColor = "rgb(80,80,80)";
+                buttonFish[i].style.color = "white";
+            };
+    
+            //Selected button has a different style to indicate selection
+            fish.style.backgroundColor = "white";
+            fish.style.color = "black";
 
-        for (i = 0; i < buttonFish.length; i++) {
-            buttonFish[i].style.backgroundColor = "rgb(80,80,80)";
-            buttonFish[i].style.color = "white";
-        };
+            var selectedFish = Object.keys(data.fish)[0];
+            console.log(selectedFish)
 
-        fish.style.backgroundColor = "white";
-        fish.style.color = "black";
-    })
+            document.getElementById('fishImg').src = `${data.fish[fishId].image}`;
+            console.log(`${data.fish[fishId]}`);
+        })
+    });
 });
 
+
+//Checks all parameter selection buttons and runs the function based on which one is chosen
 buttonPara.forEach(link => {
     link.addEventListener('click', function() {
         var i;
@@ -35,18 +55,30 @@ buttonPara.forEach(link => {
         info.innerHTML = `<h1>${paraId}</h1>\
         ${data.parameter[paraId].description}<br><br>\
         ${data.parameter[paraId].effect}<br><br>`
+        info.classList.remove("infoani");
+        info.classList.add("infoani");
+
+
+        //Reset input and output values
         input.value = "";
         output.innerHTML = "Awaiting value..."
         output.style.backgroundColor = "rgb(255,255,255,0.5)"
 
+        if (paraId == "Temperature") {
+            addInfo.style.display = "block";
+        } else {
+            addInfo.style.display = "none";
+        }
         input.style.display = "block";
         output.style.display = "block";
         enter.style.display = "block";
 
+        //Iterates through all buttons to change the background colour to grey
         for (i = 0; i < buttonPara.length; i++) {
             buttonPara[i].style.backgroundColor = "rgb(80,80,80)";
         };
 
+        //Repeat if statements check the id of the button to determine which button should change colour to indicate selection
         if (paraId == "Temperature") {
             enter.innerHTML = "Enter temperature (°C) below:<br><br>"
             content.style.backgroundColor = "rgb(128, 0, 0)";
@@ -71,12 +103,29 @@ buttonPara.forEach(link => {
     });
 })
 
+//Updates the output if the input is changed
 input.oninput = function() {
-
+    //A backup function is ran if there is no value
     if (input.value == "") {
         output.innerHTML = "Awaiting value..."
         output.style.backgroundColor = "rgb(255,255,255,0.5)"
     } else {
+        /*  Checks the id of the button and fish selected, and compares the input value to the corresponding values in the .json file
+            Adjust style accordingly
+            Note to account for ranges of values, such as temp and pH where there is an upper and lower bound, unlike ammonia and nitrite,
+            an array with 0 at the 0th index is placed in the JSON file (all values should be positive, and negative temp = ice)
+            the value at the 1st index will account for the maximum value.   */
+        if (input.value > data.fish[fishId][paraId][1]) {
+            output.innerHTML = `The ${paraId.toLowerCase()} is too high!`
+            output.style.backgroundColor = "rgb(255,100,100)"
+        } else if (input.value < data.fish[fishId][paraId][0]) {
+            output.innerHTML = `The ${paraId.toLowerCase()} is too low!`
+            output.style.backgroundColor = "rgb(100,100,255)"
+        } else {
+            output.innerHTML = `The ${paraId.toLowerCase()} is ideal for the ${fishId.toLowerCase()}.`
+            output.style.backgroundColor = "rgb(100,255,100)"
+        }
+        /*
         if (paraId == "Temperature") {
             if (input.value > data.fish[fishId].temperature[1]) {
                 output.innerHTML = "The temperature is too high!"
@@ -126,6 +175,6 @@ input.oninput = function() {
                 output.innerHTML = `The ammonia level is ideal for the ${fishId.toLowerCase()}.`
                 output.style.backgroundColor = "rgb(100,255,100)"
             }
-        }
+        }*/
     }
 }

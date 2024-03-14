@@ -15,15 +15,25 @@
         <p>AQUAPONICS SYSTEM V1.3 :3</p>
     </div>
     <div class="fish-nav">
-        <button class="fishlink" id="Barramundi">Barramundi</button>
+        <button class="fishlink" id="Barramundi" index="0">Barramundi</button>
         <button class="fishlink" id="Murray Cod">Murray Cod</button>
-        <button class="fishlink" id="Silver Perch">Silver Perch</button>
+        <button class="fishlink" id="Jade Perch">Jade Perch</button>
         <button class="fishlink" id="Rainbow Trout">Rainbow Trout</button>
         <button class="fishlink" id="Catfish">Catfish</button>
         <button class="fishlink" id="Custom">Custom (.xlsm)</button>
     </div>
     <div class="desc-tab" id="descTab">
-        <p id="desc"><h1>Welcome to the (soon to be) second version of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input doesn't work).</h1></p>
+        <p id="desc"><h1>Welcome to the (soon to be) second version of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input doesn't work). This version includes:
+            <ul>
+                <li>More fishies to test</li>
+                <li>Additional information on the fish temperatures</li>
+                <li>Updated input</li>
+                <li>'Sticky' tabs (scroll down)</li>
+                <li>Title for obvious reason</li>
+                <li>Photo of a barra for some reason (what the fish?)</li>
+            </ul>
+        </h1></p>
+        <img id="fishImg" src="images/Barramundi.png">
     </div>
     <div class="para-nav">
         <button class="paralink" id="Temperature">Temperature</button>
@@ -36,10 +46,13 @@
         <div class="info" id="info">
             <p>Description on the parameter and input will appear here after selecting a parameter.</p>
         </div>
+        <div class="add-info" id="addInfo">
+            <p>More information about the temperature will appear here! If you see this, it's because you have not selected a fish yet!</p>
+        </div>
         <div id="valueEnter">
             <p>Enter value here:</p>
         </div>
-        <input id="valueInput" type="number" step="0.1">
+        <input id="valueInput" type="number" step="0.1" min="0" placeholder="Enter value here">
         <div id="valueOutput">
             <p>Your results will be here...</p>
         </div>

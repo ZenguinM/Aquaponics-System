@@ -1,65 +1,90 @@
 ---AQUAPONICS---
 
-    BACKGROUND:     Aquaponics is a combination of aquaculture and hydroponics, which is able to grow both fish
-                    and plants.
-    PROBLEM:        The Science Faculty need you to create a practical solution to a problem in Biology. For some 
-                    time now, a Biology teacher has been trying to get an aquaponics system functioning properly, 
-                    but they are experiencing problems maintaining the balance of pH, ammonia, nitrates and nitrites. 
-                    The teacher needs a monitoring system that will alert them to variations in the concentrations of
-                    any of the variables listed above. They also require a temperature indicator. 
+    BACKGROUND:     
+        Aquaponics is a combination of aquaculture and hydroponics, which is able to grow both fish and plants. The main goal in an aquaponics system is to create an environment that supports both fish and plants in a symbiotic relationship. Fish waste is used as fertilizer for the plants, and the plants clean the water for the fish. This 'circular' process has benefits, such as reducing water waste, reduces waste creation, and obviously being able to grow both plants and fish in one system. Outside the immediate results of an aquaponics system, it is more economical and ecological, reduces the need for chemical fertilizers and pesticides, has a much lower land footprint compared to traditional farming, better crop yield and growth, create opportunities for businesses, and many more advantages. 
+    PROBLEM:        
+        The Science Faculty need you to create a practical solution to a problem in Biology. For some time now, a Biology teacher has been trying to get an aquaponics system functioning properly, but they are experiencing problems maintaining the balance of pH, ammonia, nitrates and nitrites. The teacher needs a monitoring system that will alert them to variations in the concentrations of any of the variables listed above. They also require a temperature indicator.
+    ADDITONAL INFO: 
+        In an aquaponics system, constantly monitoring the parameters is preferred, rather than checking the values every time. The biology teacher may want this to observe any trends in their data and to be able to be alerted for any issues when they are not physically present. This can help optimize preformance and troubleshoot the aquaponics system. Adjustments to the water could be automated by running a function that connects to another program which adjusts the water quality appropriately. For example, if the water becomes dangerously hot, the water cooler will be turned on by the program. This extension is a bit hefty because the program required to run such system may require external connections.
 
 ---PLANNING---
 
-    1.  Search for fish and plants typically grown in aquaponics in Darwin
-    2.  Search water quality parameters and how they affect fish and plants
-    3.  Search one fish for the suitable water parameters and note them
-    4.  Create a flowchart of how the program should work
-    5.  Create a web UI with functionable button
-    6.   
+    PROGRAM:
+        LANGUAGE:
+            The program will be written in HTML, CSS, and JS, which are the three main coding languages used to program websites. 
+        FUNCTION:
+            The UI will have a simple design that allows for users to select a fish or a plant from the navigation bar. A description of the selected fish or plant will appear. The user can then select the parameter to be tested. The details and the input bar will appear afterwards, to which the user may input their value into the input bar and see the output displayed. The output display will change depending on if the level of the parameter is not suitable and give advice on what to do to bring the parameter to the suitable level.
+        LAYOUT:
+            There will be a navigation bar at the top of the screen for selection. It will have 'folder' styled tabs. A box will appear under the navigation bar which will display the information when the tab is clicked. 
+        MINIMAL VIABLE PRODUCT (MVP):
+            The MVP is a website that allows users to select the fish and the parameter, input the corresponding value and output whether the value is too high, low, or at the suitable level.
+
+    PROCESS:
+        1.  Search for fish and plants typically grown in aquaponics in Australia
+        2.  Search water quality parameters and how they affect fish and plants
+        3.  Search one fish for the suitable water parameters and note them
+            a.  Write a seperate local file for all the data from the previous steps so it is esaily accessible and changeable in the future
+        4.  Create a flowchart of how the program should work
+            a.  Display 'home' page
+            b.  Receive input from user (button input)
+            c.  Save input as variable
+            d.  Display information on the water parameter
+            e.  Display value input
+            f.  Receive input from user (value input)
+            g.  Check parameter variable and compare to data in seperate local file
+            f.  Continuous update output on every input change based on value
+        5.  Create a web UI with functionable buttons
+            a.  Use HTML and CSS to create website
+            b.  Use JS to add functionality
+        6.  Add buttons for other common fish used in Australian aquaponics
+            a.  Display information about the fish and related aquaponics details on user input
+        7.  Adjust input to change depending on fish selected
+            a.  Optimize code to account for all variables in one, rather than seperate blocks of code for each different scenario
+        8.  Adjust feedback to include how to fix any issues with the water parameter (e.g. for high temperature, ensure pond is under shade)
+        9.  Include button to measure all values at once
+        10. Create random value simulator for the 'all parameters' which simulates what would happen if the program was connected to an external system
+        11. 
 
 ---WATER QUALITY PARAMETERS---
 
     TEMPERATURE:        
-        Description:    Temperature is vital for bacteria and nutrient breakdown and uptake by plants and fish. 
-                        Many factors can affect temperature such as climate, materials, and systems. Generally, 
-                        the water temperature should ranger between 20°C - 30°C, however this differs between
-                        fish, plants, and bacteria. 
-        Effect:         High temperatures can affect a plant's dissolved oxygen, cause wilting, and death. Cold
-                        will affect growth. Fish cannot regulate body temperatures, so knowing the category of
-                        fish is vital (cold, cool, and warm water fish). Optimal temperatures help with health
-                        growth, reduce stress and diseases, and feeding. High temperatures affect metabolism and
-                        oxygen requirements.
+        Description:    
+            Temperature is vital for bacteria and nutrient breakdown and uptake by plants and fish. Many factors can affect temperature such as climate, materials, and systems. Generally, the water temperature should ranger between 20°C - 30°C, however this differs between fish, plants, and bacteria. 
+        Effect:         
+            High temperatures can affect a plant's dissolved oxygen, cause wilting, and death. Coldwill affect growth. Fish cannot regulate body temperatures, so knowing the category offish is vital (cold, cool, and warm water fish). Optimal temperatures help with healthgrowth, reduce stress and diseases, and feeding. High temperatures affect metabolism andoxygen requirements.
+        Decreasing:     
+            If the system is outside, use a shade cloth above it to reduce the impact of sunlight onthe water. This will also decrease algae growth, which may be preferred. A tank chiller can also help, but is more costly. Embedding the fish tanks underground will help with insulating the tank, but this will also depend on the temperature of the ground.
+        Increasing:
+            During cold months, preserving the heat of the system is vital. This can be done by insulating the tank with reflective foil or cloth. If the tanks are in a greenhouse, an air or tank heater can be used instead. Ensure tanks are suspended from the floor if it the floor gets too cold.
+    
     pH:
-        Description:    pH measures the acidity or alkalinity of the water. It can affect the solubilty and uptake
-                        of nutrients, microbial activity, and system stability. Factors affect pH include fish waste,
-                        plant uptake, carbon dioxide levels, and water quality. Generally, the pH should be around 
-                        6.8 to 7.2.
-        Effect:         Poor pH can result in stunted plant growths and poor yields, nutrient deficiency, toxicity,
-                        increased stress and diseases. Raising pH can be done with calcium carbonate and potassium 
-                        carbonate, water change, or grow media. Lowering pH can be done by cycling the water, or
-                        using acids such as phosphoric acid.
+        Description:    
+            pH measures the acidity or alkalinity of the water. It can affect the solubilty and uptake of nutrients, microbial activity, and system stability. Factors affect pH include fish waste, plant uptake, carbon dioxide levels, and water quality. Generally, the pH should be around 6.8 to 7.2.
+        Effect:         
+            Poor pH can result in stunted plant growths and poor yields, nutrient deficiency, toxicity, increased stress and diseases. Raising pH can be done with calcium carbonate and potassium carbonate, water change, or grow media. Lowering pH can be done by cycling the water, or using acids such as phosphoric acid.
+        Decreasing:
+            Decreasing the pH is not usually required as nitrification lowers the pH naturally. If it is required however, the expensive option is reverse osmosis but it is the safest. Moving to the cheaper options, incorporating distilled water over time can help. Adding chemicals such as phosphoric or nitric acid or simply cycling the water can reduce the pH. Research must be done on the exact ratios of acid to water.
+        Inceasing:
+            Calcium carbonate, magnesium carbonate, and potassium carbonate can be added to the water to increase the pH.
+            
+
     NITRATE:
-        Description:    A non-toxic form of nitrogen, which is food for the plants. The nitrogen cycle happens when
-                        when ammonia from fish waste is converted to nitrites, and then into nitrates by bacterium.
-                        Generally, the nitrate level should be areoun 3 to 150 mg/l or 150 ppm.
-        Effect:         It, as well as nitrogen, is necessary for fish and plant growth, and the cycle reduces ammonia
-                        in the system. Proper nitrates maximises yield. Increasing nitrate can be done by adding
-                        more fish, or bacteria. Reducing can be done by adding plants, removing fish, or changing
-                        water.
+        Description:
+            A non-toxic form of nitrogen, which is food for the plants. The nitrogen cycle happens when ammonia from fish waste is converted to nitrites, and then into nitrates by bacterium. Generally, the nitrate level should be around 3 to 150 mg/l or 150 ppm.
+        Effect:
+            It, as well as nitrogen, is necessary for fish and plant growth, and the cycle reduces ammonia in the system. Proper nitrates maximises yield. Increasing nitrate can be done by adding more fish, or bacteria. Reducing can be done by adding plants, removing fish, or changing water.
+
     NITRITE:
-        Description:    Intermittent stage between the conversion between ammonia to nitrate. Nitrification is
-                        maximised at atound 25°C to 30°C. This process also reduces pH and uses oxygen. Generally,
-                        nitrites should be at 0 ppm.
-        Effect:         Nitrite above 0.75 ppm can cause stress, above 5 ppm is toxic to fish. It can kill fish by
-                        affecting their oxygen intake, even if the dissolved oxygen is sufficient.
+        Description:
+            Intermittent stage between the conversion between ammonia to nitrate. Nitrification is maximised at atound 25°C to 30°C. This process also reduces pH and uses oxygen. Generally, nitrites should be at 0 ppm.
+        Effect:         
+            Nitrite above 0.75 ppm can cause stress, above 5 ppm is toxic to fish. It can kill fish by affecting their oxygen intake, even if the dissolved oxygen is sufficient.
+
     AMMONIA:
-        Description:    Excreted by fish, ammonia is the starter for the nitrogen cycle which helps with the plants
-                        at the end. It can also come from fish food. Ammonia and pH levels are usually related; high
-                        ammonia means high pH and vice versa. High oxygen levels help remove ammonia.
-        Effect:         Ammonia poisoning can cause damage to fish, impair fish growth, reduce resistance to diseases,
-                        and death. Removing ammonia can be done through biofilters, reducing nitrogen in the system,
-                        or adjusting feedin rates. Not enough ammonia will affect plant growth, which can be fixed by
-                        adding more fish.
+        Description:    
+            Excreted by fish, ammonia is the starter for the nitrogen cycle which helps with the plants at the end. It can also come from fish food. Ammonia and pH levels are usually related; high ammonia means high pH and vice versa. High oxygen levels help remove ammonia.
+        Effect:         
+            Ammonia poisoning can cause damage to fish, impair fish growth, reduce resistance to diseases, and death. Removing ammonia can be done through biofilters, reducing nitrogen in the system, or adjusting feedin rates. Not enough ammonia will affect plant growth, which can be fixed by adding more fish.
 
 ---PLANTS---
 
@@ -71,15 +96,15 @@
         Ammonia:        0 ppm
 
 ---FISH---
-    TILAPIA:
-        Description:    
+
+    TILAPIA: [NOT INCLUDING AS TILAPIA ARE BANNED IN AUSTRALIA] 
         Temperature:    
         pH:
         Nitrate:
         Nitrite:
         Ammonia:
+
     BARRAMUNDI:
-        Description:    
         Temperature:    28°C - 32°C (optimal)
                         < 20°C causes increased stress-related deaths and disease outbreaks
                         < 13°C causes death
@@ -87,9 +112,106 @@
                         27°C - 29°C causes maximum food intake
                         20°C causes minimum food intake
         pH:             6.5 - 7.2
-        Nitrate:        < 0.5 ppm
+        Nitrate:        20 - 80 ppm
         Nitrite:        0 ppm
         Ammonia:        < 0.5 ppm
+
+    MURRAY COD: 
+        Temperature:    18°C - 26°C
+                        > 26°C increases risk of health issues
+        pH:             6.0 - 8.0
+        Nitrate:        20 - 80 ppm
+        Nitrite:        0 ppm
+        Ammonia:        < 0.1 ppm
+
+    JADE PERCH:   
+        Temperature:    
+        pH:
+        Nitrate:
+        Nitrite:
+        Ammonia:
+
+    CATFISH:
+        Temperature:    18°C - 23°C
+        pH:             5.0 - 7.0
+        Nitrate:        20 - 80 ppm
+        Nitrite:        0 ppm
+        Ammonia:        < 0.5 ppm
+
+    RAINBOW TROUT:
+        Temperature:    13°C - 16°C
+                        > 21°C decreases growth rates
+                        10°C for breeding
+        pH:             6.7 - 8.2
+        Nitrate:        40 - 110 ppm
+        Nitrite:        < 0.1 ppm
+        Ammonia:
+
+---VERY INFORMATION RICH WEBSITES---
+
+    Broad coverage of all parameters for fish and how to handle unsuitable parameters:
+    https://extension.okstate.edu/fact-sheets/print-publications/hla/nitrification-and-maintenance-in-media-bed-aquaponics-hla-6729.pdf
+
+---DECONSTRUCT LAYOUT---
+
+    •   Describe situation
+    •   Purpose of aquaponics
+    •   Describe aquaponics
+    •   Describe the function of the program
+    •   Layout of program
+    •   How it should work (framework)
+    •   Minimum viable product (absolute basic program and what it should include)
+    •   Language of choice
+    •   Use flowchart to describe code
+    •   Describe solution (with video)
+    •   Sources
+
+---UPDATE HISTORY---
+
+    Note: The update history was added in V1.4, which means that the updates of previous versions may not be completely accurate. Updates after V1.4 will be mostly accurate. The exact lines of code updated can be checked in the 'Commit' history on GitHub.
+
+    V0.0:
+        •   Created file (HTML, CSS, and JS)
+    V0.1:
+        •   Added buttons for parameter navigation
+        •   Created desconstruct
+        •   Started CSS and JS
+    V1.0:
+        Program takes in an input from the user after selecting a parameter and displays if it is too high or low or okay. The parameters are placed in a navigation bar at the top of the screen each with a unique colour that updates the colour of the content when clicked. Output updates on input update (the function to check value updates every time the input value is changed).
+        •   Added content section to include description of parameter
+        •   Added user input
+        •   Added JSON file
+        •   Updated function running the tab selection due to creation of JSON file
+        •   Program responds to user input (too high, too low, or okay)
+        •   Updated UI
+    V1.1:
+        •   Updated font
+        •   Updated tab to show selection
+        •   Added navigation bar for different fish
+        •   HTML updates with new class names
+    V1.2:
+        •   Added more fish
+        •   Added description for fish
+        •   Updated UI
+        •   Fixed bug with text not appearing
+        •   Updated code to adjust values depending on fish selected
+        •   Updated JSON file
+        •   Added photo to test
+    V1.3:
+        •   Added 'sticky' navigation bar (sticks to top when scrolling)
+        •   UI design slightly changed
+        •   Tab selection style for fish and parameters updated
+        •   Content style updated
+        •   Added title
+        •   Added favicon
+    V1.4:
+        •   Huge updates to deconstruct.txt file for draft
+        •   Updated information in JSON file
+        •   Changed input style
+        •   Shortened input code significantly
+    V1.5:
+        •   
+    V2.0:
 
 ---ASSESSMENT CRITERIA---
 
@@ -101,8 +223,7 @@
     Some examples of evidence for each criteria are listed below:
 
     COMPUTATIONAL THINKING:
-        CT1	Application of computational thinking concepts and techniques, to identify and deconstruct problems of
-        interest
+        CT1	Application of computational thinking concepts and techniques, to identify and deconstruct problems of interest
             •	Clearly outline the problem that needs to be solved.
             •	Deconstruct the problem into a number of sequential tasks use tools that show dependencies and
                 flow of sequence between parts
@@ -125,12 +246,9 @@
             •	Use a range of data structures including numbers, strings, Booleans and arrays, lists and dictionaries
             •	Use a variety of coding constructs – sequence, selection and iteration 
             •	Describe code, including comments to enable others to read and understand your code
-            •	Use recommended coding practices such as naming conventions, comments, constants and modularisation.
-                Modularisation can be shown through the use of functions or procedures. 
+            •	Use recommended coding practices such as naming conventions, comments, constants and modularisation.Modularisation can be shown through the use of functions or procedures. 
 
         DE3	Evaluation of the effectiveness of a digital solution or prototype
             •	Test code for correctness under a wide variety of conditions and how it reacts to unexpected inputs
             •	Describe how the application meets the needs of the client
             •	Identify possible limitations of the code and possible improvements.
-
-
