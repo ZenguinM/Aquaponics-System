@@ -5,6 +5,7 @@ const desc = document.getElementById("descTab");
 const content = document.getElementById("content");
 const enter = document.getElementById("valueEnter");
 const input = document.getElementById("valueInput");
+const result = document.getElementById("result");
 const output = document.getElementById("valueOutput");
 var paraId, fishId;
 const buttonPara = document.querySelectorAll('.paralink');
@@ -39,9 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var selectedFish = Object.keys(data.fish)[0];
             console.log(selectedFish)
-
-            document.getElementById('fishImg').src = `${data.fish[fishId].image}`;
-            console.log(`${data.fish[fishId]}`);
         })
     });
 });
@@ -52,12 +50,21 @@ buttonPara.forEach(link => {
     link.addEventListener('click', function() {
         var i;
         paraId = this.id;
-        info.innerHTML = `<h1>${paraId}</h1>\
-        ${data.parameter[paraId].description}<br><br>\
-        ${data.parameter[paraId].effect}<br><br>`
+        console.log(paraId)
+
+        if (paraId !== "All") {
+            info.innerHTML = `<h1>${paraId}</h1>\
+            ${data.parameter[paraId].description}<br><br>\
+            ${data.parameter[paraId].effect}<br><br>`
+            document.getElementById("singlePara").style.display = "block"
+            document.getElementById("multiPara").style.display = "none"
+        } else {
+            document.getElementById("singlePara").style.display = "none"
+            document.getElementById("multiPara").style.display = "block"
+        }
+        
         info.classList.remove("infoani");
         info.classList.add("infoani");
-
 
         //Reset input and output values
         input.value = "";
@@ -99,27 +106,36 @@ buttonPara.forEach(link => {
             enter.innerHTML = "Enter ammonia level (ppm) below:<br><br>";
             content.style.backgroundColor = "rgb(0, 101, 135)";
             link.style.backgroundColor = "rgb(0, 101, 135)";
+        } else if (paraId == "All") {
+            content.style.backgroundColor = "rgb(108, 71, 163)";
+            link.style.backgroundColor = "rgb(108, 71, 163)";
         };
     });
 })
 
 //Updates the output if the input is changed
+
 input.oninput = function() {
     //A backup function is ran if there is no value
     if (input.value == "") {
         output.innerHTML = "Awaiting value..."
         output.style.backgroundColor = "rgb(255,255,255,0.5)"
+    } else if (fishId == undefined) {
+        output.innerHTML = "You have not selected a fish yet!"
+        output.style.backgroundColor = "rgb(255,100,100)";
     } else {
-        /*  Checks the id of the button and fish selected, and compares the input value to the corresponding values in the .json file
+        /*Checks the id of the button and fish selected, and compares the input value to the corresponding values in the .json file
             Adjust style accordingly
             Note to account for ranges of values, such as temp and pH where there is an upper and lower bound, unlike ammonia and nitrite,
             an array with 0 at the 0th index is placed in the JSON file (all values should be positive, and negative temp = ice)
-            the value at the 1st index will account for the maximum value.   */
+            the value at the 1st index will account for the maximum value. */   
         if (input.value > data.fish[fishId][paraId][1]) {
-            output.innerHTML = `The ${paraId.toLowerCase()} is too high!`
-            output.style.backgroundColor = "rgb(255,100,100)"
+            output.innerHTML = `The ${paraId.toLowerCase()} is too high!<br><br>\
+            Suggestion: ${data.parameter[paraId].decreasing}`;
+            output.style.backgroundColor = "rgb(255,100,100)";
         } else if (input.value < data.fish[fishId][paraId][0]) {
-            output.innerHTML = `The ${paraId.toLowerCase()} is too low!`
+            output.innerHTML = `The ${paraId.toLowerCase()} is too low!<br><br>\
+            Suggestion: ${data.parameter[paraId].increasing}`
             output.style.backgroundColor = "rgb(100,100,255)"
         } else {
             output.innerHTML = `The ${paraId.toLowerCase()} is ideal for the ${fishId.toLowerCase()}.`
@@ -178,3 +194,4 @@ input.oninput = function() {
         }*/
     }
 }
+

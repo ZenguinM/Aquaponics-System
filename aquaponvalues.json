@@ -4,31 +4,39 @@
 
         "Temperature": {
             "description": "Temperature is vital for bacteria and nutrient breakdown and uptake by plants and fish. Many factors can affect temperature such as climate, materials, and systems. Generally, the water temperature should ranger between 20°C - 30°C, however this differs between fish, plants, and bacteria.",
-            "effect": "High temperatures can affect a plant's dissolved oxygen, cause wilting, and death. Cold will affect growth. Fish cannot regulate body temperatures, so knowing the category of fish is vital (cold, cool, and warm water fish). Optimal temperatures help with health growth, reduce stress and diseases, and feeding. High temperatures affect metabolism and oxygen requirements."
+            "effect": "High temperatures can affect a plant's dissolved oxygen, cause wilting, and death. Cold will affect growth. Fish cannot regulate body temperatures, so knowing the category offish is vital (cold, cool, and warm water fish). Optimal temperatures help with healthgrowth, reduce stress and diseases, and feeding. High temperatures affect metabolism and oxygen requirements.",
+            "decreasing": "If the system is outside, use a shade cloth above it to reduce the impact of sunlight onthe water. This will also decrease algae growth, which may be preferred. A tank chiller can also help, but is more costly. Embedding the fish tanks underground will help with insulating the tank, but this will also depend on the temperature of the ground.",
+            "increasing": "During cold months, preserving the heat of the system is vital. This can be done by insulating the tank with reflective foil or cloth. If the tanks are in a greenhouse, an air or tank heater can be used instead. Ensure tanks are suspended from the floor if it the floor gets too cold."
         },
 
         "pH": {
-            "description": "pH measures the acidity or alkalinity of the water. It can affect the solubilty and uptake of nutrients, microbial activity, and system stability. Factors affect pH include fish waste, plant uptake, carbon dioxide levels, and water quality. Generally, the pH should be around 6.8 to 7.2.",
-            "effect": "Poor pH can result in stunted plant growths and poor yields, nutrient deficiency, toxicity, increased stress and diseases. Raising pH can be done with calcium carbonate and potassium carbonate, water change, or grow media. Lowering pH can be done by cycling the water, or using acids such as phosphoric acid."
+            "description": " pH measures the acidity or alkalinity of the water. It can affect the solubilty and uptake of nutrients, microbial activity, and system stability. Factors affecting pH include fish waste, plant uptake, carbon dioxide levels, and water quality. Generally, the pH should be around 6.5 to 7.5.",
+            "effect": "Poor pH can result in stunted plant growths and poor yields, nutrient deficiency, toxicity, increased stress and diseases. Note that plants do prefer a bit more acidic water.",
+            "decreasing": "Decreasing the pH is not usually required as nitrification lowers the pH naturally. If it is required however, the expensive option is reverse osmosis but it is the safest. Moving to the cheaper options, incorporating distilled water over time can help. Adding chemicals such as phosphoric or nitric acid or simply cycling the water can reduce the pH. Research must be done on the exact ratios of acid to water.",
+            "increasing": "Calcium carbonate, magnesium carbonate, and potassium carbonate can be added to the water to increase the pH. These chemicals are also beneficial to the plants as nutrients. Be careful to add the supplements slowly to not shock the fish and to measure the effect."
         },
 
         "Nitrate": {
             "description": "A non-toxic form of nitrogen, which is food for the plants. The nitrogen cycle happens when ammonia from fish waste is converted to nitrites, and then into nitrates by bacterium. Generally, the nitrate level should be around 3 to 150 mg/L or ppm, both units are equal in measurement.",
-            "effect": "It, as well as nitrogen, is necessary for fish and plant growth, and the cycle reduces ammonia in the system. Proper nitrates maximises yield. Increasing nitrate can be done by adding more fish, or bacteria. Reducing can be done by adding plants, removing fish, or changing water."
+            "effect": "It, as well as nitrogen, is necessary for fish and plant growth, and the cycle reduces ammonia in the system. Proper nitrates maximises crop yield.",
+            "decreasing": "Backwashing or changing the water can help to reduce nitrate leveles if needed. Implementing more plants can help increase nitrate intake by plants. Removing fish or reducing feeding amounts can also help.",
+            "increasing": "Increasing nitrates can be done by adding more fish or increasing feeding amounts as fish food contains small amounts of nitrates. Adding bacteria can help, but prior research on compatibility is required."
         },
 
         "Nitrite": {
             "description": "Intermittent stage between the conversion between ammonia to nitrate. Nitrification is maximised at atound 25°C to 30°C. This process also reduces pH and uses oxygen. Generally, nitrites should be at 0 ppm.",
-            "effect": "Nitrite above 0.75 ppm can cause stress, above 5 ppm is toxic to fish. It can kill fish by affecting their oxygen intake, even if the dissolved oxygen is sufficient."
+            "effect": "Nitrite levels above 0.75 ppm can cause stress, above 5 ppm is toxic to fish. It can kill fish by affecting their oxygen intake, even if the dissolved oxygen is sufficient.",
+            "decreasing": "A water change can help, along with reduced feeding rates. Removing any solids build-up and dead fish in the system will reduce nitrite. If this persists, there may not be enough bacteria for the system or there are too many fish.",
+            "increasing": "Your nitrite levels should not be under 0. Please ensure that you have not placed a negative sign in the input."
         },
 
         "Ammonia": {
             "description": "Excreted by fish, ammonia is the starter for the nitrogen cycle which helps with the plants at the end. It can also come from fish food. Ammonia and pH levels are usually related; high ammonia means high pH and vice versa. High oxygen levels help remove ammonia.",
-            "effect": "Ammonia poisoning can cause damage to fish, impair fish growth, reduce resistance to diseases, and death. Removing ammonia can be done through biofilters, reducing nitrogen in the system, or adjusting feedin rates. Not enough ammonia will affect plant growth, which can be fixed by adding more fish. Be aware that 0 ammonia is optimal for all fish, but having a small amount (like 0.1 ppm small) is usually ok."
+            "effect": "Ammonia poisoning can cause damage to fish, impair fish growth, reduce resistance to diseases, and death. Not enough ammonia will affect plant growth. Bacteria will begin to die at levels higher than 4 ppm. Ammonia tolerance varies between fish species but in most fish, keeping it near 0 is the preferred amount.",
+            "decreasing": "Steps to reduce ammonia include: reduce feeding, remove solids accumulation through the biofilters, and water changes. Repeat periodically until the levels reach the desired amount. Be careful not to cause ammonia shock by doing small changes over time, instead of one moment.",
+            "increasing": "Your ammonia levels should not be under 0. Please ensure that you have not placed a negative sign in the input."
         }
     },
-
-    "plant": {},
 
     "fish": {
 
@@ -46,7 +54,7 @@
         "Murray Cod": {
             "description": "<h1>Murray Cod</h1>The murray cod (<i>Maccullochella peelii</i>) is also commonly called Goodoo, Codfish, and Greenfish. This iconic fish is the largest freshwater fish in Australia and are common in the, fittingly named, Murray-Darling Basin. They're distributed all around New South Wales and in nearby parts of South Australia, Queensland, and Victoria. With firm texture and mild taste, it is versatile in dishes. <br><br>Murray cod can grow quickly and are an aggressive and territorial fish. Avoiding cannabalism is vital by keeping the ones of the same size together. Being freshwater, high salinity cannot be tolerated. They can be susceptible to fungal and bacterial infecitons when crowded so water quality must be strictly maintained. ",
             "Temperature": [18,26],
-            "addinfo": "Murray cod are cool idk much about them yet uhh...",
+            "addinfo": "Murray cod will survive between <b>18°C to 26°C</b>. Any higher will incrase the risk of health issues. Lower temperatures are still suitable right until even 8°C. But optimal temperatures are better for quality.",
             "pH": [6,8],
             "Nitrate": [20,80],
             "Nitrite": [0,0],
@@ -54,13 +62,13 @@
         },
 
         "Jade Perch": {
-            "description": "<h1>Silver Perch</h1> The silver perch isn't actually made of silver, but fish.",
-            "Temperature": [0,1],
-            "addinfo": "Jade perch are NOT made of Jade. Are you insane??",
-            "pH": [0,1],
-            "Nitrate": [0,1],
+            "description": "<h1>Jade Perch</h1> The jade perch (<i>Scortum barcoo</i>) isn't actually made of jade, because that would be wild. They are hardy and survive eating a variety of food because they are omnivores. They are native to Australia and are identifiable by the black dots on their silvery skin. They can grow up to around 30 cm and have a lot of Omega-3 oils, which result in a tasty flavour. <br><br>Their diet makes them easy to feed which is what results in their high fatty acid content. The jade perch is commonly grown in Australia and will reach plate size in 12 months, making them quick growers. Overall, they are considered an easy species to raise.",
+            "Temperature": [20,32],
+            "addinfo": "Jade perch can support a large range of temperatures, but their optimal growth lies at <b>24°C to 28°C</b>. Because they are warm-blooded fishes, colder temperatures can affect them more severely. <b>Lower than 20°C</b> can reduce growht rates, <b>under 17°C</b> could potentially cause deaths when being handled, and <b>below 13°C</b> will cause deaths.",
+            "pH": [6.5,8.5],
+            "Nitrate": [20,80],
             "Nitrite": [0,0],
-            "Ammonia": [0,0]
+            "Ammonia": [0,0.5]
         },
 
         "Rainbow Trout": {
@@ -75,7 +83,8 @@
 
         "Catfish": {
             "description": "<h1>Catfish</h1> Catfish refers to a diverse group of fish that are distictly named for their barbels, resembling that of a cat's whiskers. The most common catfish native to Australia is the freshwater catfish, or the eel-tailed catfish (<i>Tandanus tandanus </i>). They often have an apparent 'muddy' taste if they are farmed, but there are ways to make them taste better. <br><br>Because there are many types of catfish, it is important to check what the exact parameters are suitable for the specific catfish. Catfish collectively are perfect for beginners because they are hardy and can tolerate wider ranges of pH, temperature, and others. Their nutrient-rich waste is perfect for plants and can survive with little intervention.",
-            "Temperature": [18,23],
+            "Temperature": [24,30],
+            "addinfo": "As hardy warm-blooded fish, they can support changes in temperature and pH. Their optimal temperatures lie between <b>24°C and 30°C.",
             "pH": [5,7],
             "Nitrate": [20,80],
             "Nitrite": [0,0],
@@ -83,7 +92,7 @@
         },
 
         "Custom":{
-            "description": "<h1>Custom</h1> Ultimate custom aquaponics. Anyways, this is something that will require research."
+            "description": "<h1>Custom</h1> Ultimate custom aquaponics. Anyways, this is something that will allow the user to input the appropriate values and test them in the parameter tabs below."
 
         }
     }

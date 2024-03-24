@@ -12,7 +12,7 @@
 </head>
 <body id="bg">
     <div class="hide">
-        <p>AQUAPONICS SYSTEM V1.3 :3</p>
+        <p>AQUAPONICS SYSTEM V2.0 :3</p>
     </div>
     <div class="fish-nav">
         <button class="fishlink" id="Barramundi" index="0">Barramundi</button>
@@ -20,7 +20,7 @@
         <button class="fishlink" id="Jade Perch">Jade Perch</button>
         <button class="fishlink" id="Rainbow Trout">Rainbow Trout</button>
         <button class="fishlink" id="Catfish">Catfish</button>
-        <button class="fishlink" id="Custom">Custom (.xlsm)</button>
+        <button class="fishlink" id="Custom">Custom</button>
     </div>
     <div class="desc-tab" id="descTab">
         <p id="desc"><h1>Welcome to the (soon to be) second version of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input doesn't work). This version includes:
@@ -30,10 +30,12 @@
                 <li>Updated input</li>
                 <li>'Sticky' tabs (scroll down)</li>
                 <li>Title for obvious reason</li>
-                <li>Photo of a barra for some reason (what the fish?)</li>
+                <li>Option to test all parameters (not done)</li>
+                <li>Suggestions for unsuitable parameters</li>
+                <li>Error catching for if a fish is not selected yet</li>
+                <li>Error catching for if a negative value is placed where it should not be possible (nitrate, nitrite, ammonia)</li>
             </ul>
         </h1></p>
-        <img id="fishImg" src="images/Barramundi.png">
     </div>
     <div class="para-nav">
         <button class="paralink" id="Temperature">Temperature</button>
@@ -41,20 +43,38 @@
         <button class="paralink" id="Nitrate">Nitrate</button>
         <button class="paralink" id="Nitrite">Nitrite</button>
         <button class="paralink" id="Ammonia">Ammonia</button>
+        <button class="paralink" id="All">All</button>
     </div>
     <div class="content" id="content">
-        <div class="info" id="info">
-            <p>Description on the parameter and input will appear here after selecting a parameter.</p>
+        <div id="singlePara">
+            <div class="info" id="info">
+                <p>Description on the parameter and input will appear here after selecting a parameter.</p>
+            </div>
+            <div class="add-info" id="addInfo">
+                <p>More information about the temperature will appear here! If you see this, it's because you have not selected a fish yet!</p>
+            </div>
+            <div id="valueEnter">
+                <p>Enter value here:</p>
+            </div>
+            <input id="valueInput" type="number" step="0.1" min="0" placeholder="Enter value here">
+            <div id="valueOutput">
+                <p id="result">Your results will be here...</p>
+            </div>
         </div>
-        <div class="add-info" id="addInfo">
-            <p>More information about the temperature will appear here! If you see this, it's because you have not selected a fish yet!</p>
-        </div>
-        <div id="valueEnter">
-            <p>Enter value here:</p>
-        </div>
-        <input id="valueInput" type="number" step="0.1" min="0" placeholder="Enter value here">
-        <div id="valueOutput">
-            <p>Your results will be here...</p>
+        <div id="multiPara">
+            <p><h1>All</h1>This mode allows for all water quality parameters to be tested at once. Use the inputs below to check the suitability of each parameter for the chosen fish. The colour of the input will change to red if it is too high and to blue if it is to low. Green indicates the level is suitable.<br><br>Press the "Start simulation" button to simulate a live recording of each parameter. Values will randomly increase or decrease every second and each parameter can be observed for changes. Parameters that are not suitable will have higher probabilities of adjusting to the fit conditions, simulating what an automatic water parameter adjusters. For example, if the water is too hot, the simulation will have a higher probability to reduce the heat caused by a water cooler being activated in the system.</p>
+            <div class="inputGrid">
+                <p class="gridTitle">Temperature</p>
+                <p class="gridTitle">pH</p>
+                <p class="gridTitle">Nitrate</p>
+                <p class="gridTitle">Nitrite</p>
+                <p class="gridTitle">Ammonia</p>
+                <input id="valueInputMulti" type="number" step="0.1" min="0" value="25" placeholder="Enter value here">
+                <input id="valueInputMulti" type="number" step="0.1" min="0" value="7.0" placeholder="Enter value here">
+                <input id="valueInputMulti" type="number" step="0.1" min="0" value="0" placeholder="Enter value here">
+                <input id="valueInputMulti" type="number" step="0.1" min="0" value="70" placeholder="Enter value here">
+                <input id="valueInputMulti" type="number" step="0.1" min="0" value="0" placeholder="Enter value here">
+            </div>
         </div>
     </div>
     <script src="./aquapon.js" type="module"></script>
