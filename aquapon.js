@@ -5,22 +5,19 @@ const desc = document.getElementById("descTab");
 const content = document.getElementById("content");
 const enter = document.getElementById("valueEnter");
 const input = document.getElementById("valueInput");
-const result = document.getElementById("result");
 const output = document.getElementById("valueOutput");
 var paraId, fishId;
 const buttonPara = document.querySelectorAll('.paralink');
 const buttonFish = document.querySelectorAll('.fishlink');
+const inputMulti = document.querySelectorAll('.valueInputMulti');
+const parameter = ["Temperature", "pH", "Nitrate", "Nitrite", "Ammonia"];
 
-function imageUpdate(source){
-    image.src = source
-    console.log(source)
-}
-console.log(data)
+
 //Checks all fish selection buttons and runs the function based on which one is chosen
 document.addEventListener('DOMContentLoaded', function() {
     buttonFish.forEach(fish => {
         fish.addEventListener('click', function() {
-            var i;
+            var i, j;
             fishId = this.id;
             input.value = "";
             output.innerHTML = "Awaiting value...";
@@ -40,6 +37,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var selectedFish = Object.keys(data.fish)[0];
             console.log(selectedFish)
+
+            inputMulti[0].value = "25"
+            inputMulti[1].value = "7.0"
+            inputMulti[2].value = "70"
+            inputMulti[3].value = "0"
+            inputMulti[4].value = "0"
+            for (j = 0; j < inputMulti.length; j++) {
+                inputMulti[j].style.backgroundColor = "white";
+            }
         })
     });
 });
@@ -141,57 +147,21 @@ input.oninput = function() {
             output.innerHTML = `The ${paraId.toLowerCase()} is ideal for the ${fishId.toLowerCase()}.`
             output.style.backgroundColor = "rgb(100,255,100)"
         }
-        /*
-        if (paraId == "Temperature") {
-            if (input.value > data.fish[fishId].temperature[1]) {
-                output.innerHTML = "The temperature is too high!"
-                output.style.backgroundColor = "rgb(255,100,100)"
-            } else if (input.value < data.fish[fishId].temperature[0]) {
-                output.innerHTML = "The temperature is too low!"
-                output.style.backgroundColor = "rgb(100,100,255)"
-            } else {
-                output.innerHTML = `The temperature is ideal for the ${fishId.toLowerCase()}.`
-                output.style.backgroundColor = "rgb(100,255,100)"
-            }
-        } else if (paraId == "pH") {
-            if (input.value > data.fish[fishId].ph[1]) {
-                output.innerHTML = "The water pH is too high!"
-                output.style.backgroundColor = "rgb(255,100,100)"
-            } else if (input.value < data.fish[fishId].ph[0]) {
-                output.innerHTML = "The water pH is too low!"
-                output.style.backgroundColor = "rgb(100,100,255)"
-            } else {
-                output.innerHTML = `The water pH is ideal for the ${fishId.toLowerCase()}.`
-                output.style.backgroundColor = "rgb(100,255,100)"
-            }
-        } else if (paraId == "Nitrate") {
-            if (input.value > data.fish[fishId].nitrate[1]) {
-                output.innerHTML = "The nitrate level is too high!"
-                output.style.backgroundColor = "rgb(255,100,100)"
-            } else if (input.value < data.fish[fishId].nitrate[0]) {
-                output.innerHTML = "The nitrate level is too low!"
-                output.style.backgroundColor = "rgb(100,100,255)"
-            } else {
-                output.innerHTML = `The nitrate level is ideal for the ${fishId.toLowerCase()}.`
-                output.style.backgroundColor = "rgb(100,255,100)"
-            }
-        } else if (paraId == "Nitrite") {
-            if (input.value > data.fish[fishId].nitrite) {
-                output.innerHTML = "The nitrite level is too high!"
-                output.style.backgroundColor = "rgb(255,100,100)"
-            } else {
-                output.innerHTML = `The nitrite level is ideal for the ${fishId.toLowerCase()}.`
-                output.style.backgroundColor = "rgb(100,255,100)"
-            }
-        } else if (paraId = "Ammonia") {
-            if (input.value > data.fish[fishId].ammonia) {
-                output.innerHTML = "The ammonia level is too high!"
-                output.style.backgroundColor = "rgb(255,100,100)"
-            } else {
-                output.innerHTML = `The ammonia level is ideal for the ${fishId.toLowerCase()}.`
-                output.style.backgroundColor = "rgb(100,255,100)"
-            }
-        }*/
     }
 }
+
+inputMulti.forEach(inputMultiPara => {
+    inputMultiPara.oninput = function() {
+        var i;
+        for (i = 0; i < inputMulti.length; i++) {
+            if (inputMulti[i].value > data.fish[fishId][parameter[i]][1]) {
+                inputMulti[i].style.backgroundColor = "rgb(255,100,100)";
+            } else if (inputMulti[i].value < data.fish[fishId][parameter[i]][0]) {
+                inputMulti[i].style.backgroundColor = "rgb(100,100,255)";
+            } else {
+                inputMulti[i].style.backgroundColor = "rgb(100,255,100)";
+            }
+        }
+    }
+})
 

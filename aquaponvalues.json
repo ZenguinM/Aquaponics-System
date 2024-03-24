@@ -41,20 +41,19 @@
     "fish": {
 
         "Barramundi": {
-            "description": "<h1>Barramundi</h1>The barramundi (<i>Lates calcarifer</i>), which also goes by the names Asian sea bass, giant perch, or giant sea perch, is a versatile fish found in the tropical waters of the Indo-Pacific region. They have excellent flavour and texture and their meat is used in a various dishes and provide a buttery flavour with firm texture.<br><br> They are hardy and adaptable, making it an ideal candidate for an aquaponics system. They can live in brackish and freshwater waters, and are simple creatures to take care of (relatively speaking). They grow fast and tolerate wide ranges of water conditions. Barramundi can be aggressive with other fishes, including barramundi which could lead to cannabalism. ",
-            "image": "./images/Barramundi.png",
-            "addinfo": "Barramundi are adaptable to a range of temperatures. Optimally, their temperature should range from <b>28°C to 32°C</b>. Outside of this range is still okay to a degree. Less than <b>20°C</b> causes increased stress-related issues and disease outbreaks. <b>Greater than 35°C</b> or <b>lower than 13°C</b> will cause death.",
             "Temperature": [28,32],
             "pH": [6.5,7.2],
             "Nitrate": [20, 80],
             "Nitrite": [0, 0],
-            "Ammonia": [0, 0.5]
+            "Ammonia": [0, 0.5],
+            "description": "<h1>Barramundi</h1>The barramundi (<i>Lates calcarifer</i>), which also goes by the names Asian sea bass, giant perch, or giant sea perch, is a versatile fish found in the tropical waters of the Indo-Pacific region. They have excellent flavour and texture and their meat is used in a various dishes and provide a buttery flavour with firm texture.<br><br> They are hardy and adaptable, making it an ideal candidate for an aquaponics system. They can live in brackish and freshwater waters, and are simple creatures to take care of (relatively speaking). They grow fast and tolerate wide ranges of water conditions. Barramundi can be aggressive with other fishes, including barramundi which could lead to cannabalism. ",
+            "addinfo": "Barramundi are adaptable to a range of temperatures. Optimally, their temperature should range from <b>28°C to 32°C</b>. Outside of this range is still okay to a degree. Less than <b>20°C</b> causes increased stress-related issues and disease outbreaks. <b>Greater than 35°C</b> or <b>lower than 13°C</b> will cause death."
         },
         
         "Murray Cod": {
             "description": "<h1>Murray Cod</h1>The murray cod (<i>Maccullochella peelii</i>) is also commonly called Goodoo, Codfish, and Greenfish. This iconic fish is the largest freshwater fish in Australia and are common in the, fittingly named, Murray-Darling Basin. They're distributed all around New South Wales and in nearby parts of South Australia, Queensland, and Victoria. With firm texture and mild taste, it is versatile in dishes. <br><br>Murray cod can grow quickly and are an aggressive and territorial fish. Avoiding cannabalism is vital by keeping the ones of the same size together. Being freshwater, high salinity cannot be tolerated. They can be susceptible to fungal and bacterial infecitons when crowded so water quality must be strictly maintained. ",
-            "Temperature": [18,26],
             "addinfo": "Murray cod will survive between <b>18°C to 26°C</b>. Any higher will incrase the risk of health issues. Lower temperatures are still suitable right until even 8°C. But optimal temperatures are better for quality.",
+            "Temperature": [18,26],
             "pH": [6,8],
             "Nitrate": [20,80],
             "Nitrite": [0,0],
@@ -63,8 +62,8 @@
 
         "Jade Perch": {
             "description": "<h1>Jade Perch</h1> The jade perch (<i>Scortum barcoo</i>) isn't actually made of jade, because that would be wild. They are hardy and survive eating a variety of food because they are omnivores. They are native to Australia and are identifiable by the black dots on their silvery skin. They can grow up to around 30 cm and have a lot of Omega-3 oils, which result in a tasty flavour. <br><br>Their diet makes them easy to feed which is what results in their high fatty acid content. The jade perch is commonly grown in Australia and will reach plate size in 12 months, making them quick growers. Overall, they are considered an easy species to raise.",
-            "Temperature": [20,32],
             "addinfo": "Jade perch can support a large range of temperatures, but their optimal growth lies at <b>24°C to 28°C</b>. Because they are warm-blooded fishes, colder temperatures can affect them more severely. <b>Lower than 20°C</b> can reduce growht rates, <b>under 17°C</b> could potentially cause deaths when being handled, and <b>below 13°C</b> will cause deaths.",
+            "Temperature": [20,32],
             "pH": [6.5,8.5],
             "Nitrate": [20,80],
             "Nitrite": [0,0],
@@ -73,8 +72,8 @@
 
         "Rainbow Trout": {
             "description": "<h1>Rainbow Trout</h1> The rainbow trout (<i>Oncorhynchus mykiss</i>) is actually native to North America but can be found in the South-Eastern waters of Australia. If it isn't obvious enough from the name, their silverly skin can sometimes reflect blue, green, and yellowish hues. However, their distict feature is a red or pink band on their bodies. Its great taste is another selling factor.<br><br>In an aquaponics system, they need clean, cold, and oxygenated water that simulates their natural habitat, though they are adaptable. Trout can live in brackish and fresh waters. They are hardy, grow quickly, and provide great nutrients for plants. They are carnivorous so high protein diets are required for healthy fish.",
-            "Temperature": [13,16],
             "addinfo": "As cold-blooded fishies, they require cold temperature water. Their optimal temperature ranges between <b>13°C to 16°C</b> but can go as low as <b>10°C</b> if you are planning on breeding rainbow trouts (ooh lah lah). <b>Greater than 21°C</b> will affect their growth rates negatively.",
+            "Temperature": [13,16],
             "pH": [6.7,8.2],
             "Nitrate": [40,110],
             "Nitrite": [0,0],
@@ -83,8 +82,8 @@
 
         "Catfish": {
             "description": "<h1>Catfish</h1> Catfish refers to a diverse group of fish that are distictly named for their barbels, resembling that of a cat's whiskers. The most common catfish native to Australia is the freshwater catfish, or the eel-tailed catfish (<i>Tandanus tandanus </i>). They often have an apparent 'muddy' taste if they are farmed, but there are ways to make them taste better. <br><br>Because there are many types of catfish, it is important to check what the exact parameters are suitable for the specific catfish. Catfish collectively are perfect for beginners because they are hardy and can tolerate wider ranges of pH, temperature, and others. Their nutrient-rich waste is perfect for plants and can survive with little intervention.",
-            "Temperature": [24,30],
             "addinfo": "As hardy warm-blooded fish, they can support changes in temperature and pH. Their optimal temperatures lie between <b>24°C and 30°C.",
+            "Temperature": [24,30],
             "pH": [5,7],
             "Nitrate": [20,80],
             "Nitrite": [0,0],

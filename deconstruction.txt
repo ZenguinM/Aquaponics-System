@@ -243,9 +243,9 @@
         •   Added an 'All' tab for all parameters to be tested at once (WIP)
         •   Inputs that should NOT be negative are caught by the program    and asked to be changed
         •   Program asks to select a fish if an inputs is made without selecting a fish
-        •   
-        •   
-        •   
+    V2.1:
+        •   'All' tab is now functioning for pre-installed fish
+        •   'All' inputs reset when a new fish is selected and can change colours depending on the parameter
 
 
 ---ASSESSMENT CRITERIA---
