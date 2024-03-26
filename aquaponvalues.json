@@ -91,7 +91,7 @@
         },
 
         "Custom":{
-            "description": "<h1>Custom</h1> Ultimate custom aquaponics. Anyways, this is something that will allow the user to input the appropriate values and test them in the parameter tabs below."
+            "description": "<h1>Custom Fish</h1> This tab will allow you to input custom water quality parameter levels.<br><br>Please input the name of the fish, the minimum and maximum values for the temperature, pH, and nitrate, and just the maximum for the nitrite and ammonia (as there is no minimum). Afterwards, press submit and the program will add the data to the local database to be used."
 
         }
     }

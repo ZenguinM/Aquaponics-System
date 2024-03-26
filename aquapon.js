@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
         fish.addEventListener('click', function() {
             var i, j;
             fishId = this.id;
+
+            if (fishId !== "Custom") {
+                document.getElementById("customParaTable").style.display = "none"
+            } else {
+                document.getElementById("customParaTable").style.display = "block"
+            }
+            
             input.value = "";
             output.innerHTML = "Awaiting value...";
             output.style.backgroundColor = "rgb(255,255,255,0.5)";
@@ -34,9 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             //Selected button has a different style to indicate selection
             fish.style.backgroundColor = "white";
             fish.style.color = "black";
-
-            var selectedFish = Object.keys(data.fish)[0];
-            console.log(selectedFish)
 
             inputMulti[0].value = "25"
             inputMulti[1].value = "7.0"
@@ -56,7 +60,6 @@ buttonPara.forEach(link => {
     link.addEventListener('click', function() {
         var i;
         paraId = this.id;
-        console.log(paraId)
 
         if (paraId !== "All") {
             info.innerHTML = `<h1>${paraId}</h1>\
@@ -138,14 +141,14 @@ input.oninput = function() {
         if (input.value > data.fish[fishId][paraId][1]) {
             output.innerHTML = `The ${paraId.toLowerCase()} is too high!<br><br>\
             Suggestion: ${data.parameter[paraId].decreasing}`;
-            output.style.backgroundColor = "rgb(255,100,100)";
+            output.style.backgroundColor = "rgb(255,140,128)";
         } else if (input.value < data.fish[fishId][paraId][0]) {
             output.innerHTML = `The ${paraId.toLowerCase()} is too low!<br><br>\
             Suggestion: ${data.parameter[paraId].increasing}`
-            output.style.backgroundColor = "rgb(100,100,255)"
+            output.style.backgroundColor = "rgb(161,211,255)"
         } else {
             output.innerHTML = `The ${paraId.toLowerCase()} is ideal for the ${fishId.toLowerCase()}.`
-            output.style.backgroundColor = "rgb(100,255,100)"
+            output.style.backgroundColor = "rgb(138,252,136)"
         }
     }
 }
@@ -155,11 +158,11 @@ inputMulti.forEach(inputMultiPara => {
         var i;
         for (i = 0; i < inputMulti.length; i++) {
             if (inputMulti[i].value > data.fish[fishId][parameter[i]][1]) {
-                inputMulti[i].style.backgroundColor = "rgb(255,100,100)";
+                inputMulti[i].style.backgroundColor = "rgb(255,140,128)";
             } else if (inputMulti[i].value < data.fish[fishId][parameter[i]][0]) {
-                inputMulti[i].style.backgroundColor = "rgb(100,100,255)";
+                inputMulti[i].style.backgroundColor = "rgb(161,211,255)";
             } else {
-                inputMulti[i].style.backgroundColor = "rgb(100,255,100)";
+                inputMulti[i].style.backgroundColor = "rgb(138,252,136)";
             }
         }
     }
