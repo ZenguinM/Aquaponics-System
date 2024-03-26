@@ -246,6 +246,8 @@
     V2.1:
         •   'All' tab is now functioning for pre-installed fish
         •   'All' inputs reset when a new fish is selected and can change colours depending on the parameter
+    V2.2:
+        •   
 
 
 ---ASSESSMENT CRITERIA---

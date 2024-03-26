@@ -23,19 +23,69 @@
         <button class="fishlink" id="Custom">Custom</button>
     </div>
     <div class="desc-tab" id="descTab">
-        <p id="desc"><h1>Welcome to the (soon to be) second version of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input doesn't work). This version includes:
-            <ul>
-                <li>More fishies to test</li>
-                <li>Additional information on the fish temperatures</li>
-                <li>Updated input</li>
-                <li>'Sticky' tabs (scroll down)</li>
-                <li>Title for obvious reason</li>
-                <li>Option to test all parameters (not done)</li>
-                <li>Suggestions for unsuitable parameters</li>
-                <li>Error catching for if a fish is not selected yet</li>
-                <li>Error catching for if a negative value is placed where it should not be possible (nitrate, nitrite, ammonia)</li>
-            </ul>
-        </h1></p>
+        <div id="fishIndividual">
+            <p id="desc"><h1>Welcome to the (soon to be) second version of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input doesn't work). This version includes:
+                <ul>
+                    <li>More fishies to test</li>
+                    <li>Additional information on the fish temperatures</li>
+                    <li>Updated input</li>
+                    <li>'Sticky' tabs (scroll down)</li>
+                    <li>Title for obvious reason</li>
+                    <li>Option to test all parameters (not done)</li>
+                    <li>Suggestions for unsuitable parameters</li>
+                    <li>Error catching for if a fish is not selected yet</li>
+                    <li>Error catching for if a negative value is placed where it should not be possible (nitrate, nitrite, ammonia)</li>
+                </ul>
+            </h1></p>
+        </div>
+        <div id="fishCustom">
+            <table id="customParaTable">
+                <tr>
+                    <td style="border:none;"></td>
+                    <td>Temperature</td>
+                    <td>pH</td>
+                    <td>Nitrate</td>
+                    <td>Nitrite</td>
+                    <td>Ammonia</td>
+                </tr>
+                <tr>
+                    <td>Minimum</td>
+                    <td>
+                        <input type="number" name="tempMin" id="tempMin">
+                    </td>
+                    <td>
+                        <input type="number" name="phMin" id="phMin">
+                    </td>
+                    <td>
+                        <input type="number" name="nitraMin" id="nitraMin">
+                    </td>
+                    <td>
+                        <input type="number" name="nitriMin" id="nitriMin">
+                    </td>
+                    <td>
+                        <input type="number" name="ammoMin" id="ammoMin">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Maximum</td>
+                    <td>
+                        <input type="number" name="tempMax" id="tempMax">
+                    </td>
+                    <td>
+                        <input type="number" name="phMax" id="phMax">
+                    </td>
+                    <td>
+                        <input type="number" name="nitraMax" id="nitraMax">
+                    </td>
+                    <td>
+                        <input type="number" name="nitriMax" id="nitriMax">
+                    </td>
+                    <td>
+                        <input type="number" name="ammoMax" id="ammoMax">
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
     <div class="para-nav">
         <button class="paralink" id="Temperature">Temperature</button>
