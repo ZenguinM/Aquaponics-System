@@ -1,7 +1,7 @@
 import data from "./aquaponvalues.json" assert {type: "json"};
 const info = document.getElementById("info");
 const addInfo = document.getElementById("addInfo");
-const desc = document.getElementById("descTab");
+const description = document.getElementById("fishIndividual");
 const content = document.getElementById("content");
 const enter = document.getElementById("valueEnter");
 const input = document.getElementById("valueInput");
@@ -11,48 +11,51 @@ const buttonPara = document.querySelectorAll('.paralink');
 const buttonFish = document.querySelectorAll('.fishlink');
 const inputMulti = document.querySelectorAll('.valueInputMulti');
 const parameter = ["Temperature", "pH", "Nitrate", "Nitrite", "Ammonia"];
+const fishCustom = document.getElementById("fishCustom");
 
 
 //Checks all fish selection buttons and runs the function based on which one is chosen
-document.addEventListener('DOMContentLoaded', function() {
-    buttonFish.forEach(fish => {
-        fish.addEventListener('click', function() {
-            var i, j;
-            fishId = this.id;
 
-            if (fishId !== "Custom") {
-                document.getElementById("customParaTable").style.display = "none"
-            } else {
-                document.getElementById("customParaTable").style.display = "block"
-            }
-            
-            input.value = "";
-            output.innerHTML = "Awaiting value...";
-            output.style.backgroundColor = "rgb(255,255,255,0.5)";
-            desc.innerHTML = `${data.fish[fishId].description}`;
-            addInfo.innerHTML = `${data.fish[fishId].addinfo}`;
-            
-            //Iterates through all buttons to change the background colour to grey and text to white
-            for (i = 0; i < buttonFish.length; i++) {
-                buttonFish[i].style.backgroundColor = "rgb(80,80,80)";
-                buttonFish[i].style.color = "white";
-            };
-    
-            //Selected button has a different style to indicate selection
-            fish.style.backgroundColor = "white";
-            fish.style.color = "black";
+buttonFish.forEach(fish => {
+    fish.addEventListener('click', function() {
+        var i, j;
+        fishId = this.id;
+        console.log(fishId)
 
-            inputMulti[0].value = "25"
-            inputMulti[1].value = "7.0"
-            inputMulti[2].value = "70"
-            inputMulti[3].value = "0"
-            inputMulti[4].value = "0"
-            for (j = 0; j < inputMulti.length; j++) {
-                inputMulti[j].style.backgroundColor = "white";
-            }
-        })
-    });
+        if (fishId !== "Custom") {
+            fishCustom.style.display = "none";
+        } else {
+            fishCustom.style.display = "block";
+        }
+        
+        input.value = "";
+        output.innerHTML = "Awaiting value...";
+        output.style.backgroundColor = "rgb(255,255,255,0.5)";
+        description.innerHTML = `${data.fish[fishId].description}`;
+        addInfo.innerHTML = `${data.fish[fishId].addinfo}`;
+        
+        //Iterates through all buttons to change the background colour to grey and text to white
+        for (i = 0; i < buttonFish.length; i++) {
+            buttonFish[i].style.backgroundColor = "rgb(80,80,80)";
+            buttonFish[i].style.color = "white";
+        };
+
+        //Selected button has a different style to indicate selection
+        fish.style.backgroundColor = "white";
+        fish.style.color = "black";
+
+        //Resets values to default
+        inputMulti[0].value = "25"
+        inputMulti[1].value = "7.0"
+        inputMulti[2].value = "70"
+        inputMulti[3].value = "0"
+        inputMulti[4].value = "0"
+        for (j = 0; j < inputMulti.length; j++) {
+            inputMulti[j].style.backgroundColor = "white";
+        }
+    })
 });
+
 
 
 //Checks all parameter selection buttons and runs the function based on which one is chosen
@@ -153,9 +156,11 @@ input.oninput = function() {
     }
 }
 
+//For 'All' tab: Runs function when any of the inputs are updated
 inputMulti.forEach(inputMultiPara => {
     inputMultiPara.oninput = function() {
         var i;
+        //Checks input at index i, takes the parameter in the object at index i, and compares it to the values in the JSON file accordingly
         for (i = 0; i < inputMulti.length; i++) {
             if (inputMulti[i].value > data.fish[fishId][parameter[i]][1]) {
                 inputMulti[i].style.backgroundColor = "rgb(255,140,128)";
@@ -168,3 +173,4 @@ inputMulti.forEach(inputMultiPara => {
     }
 })
 
+//Function will collect table data and organise it into an object for JSON

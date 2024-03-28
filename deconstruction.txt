@@ -43,7 +43,8 @@
         8.  Adjust feedback to include how to fix any issues with the water parameter (e.g. for high temperature, ensure pond is under shade)
         9.  Include button to measure all values at once
         10. Create random value simulator for the 'all parameters' which simulates what would happen if the program was connected to an external system
-        11. 
+        11. Include a custom fish tab to allow custom values. Code for JSON file to be updated on submit.
+        12. Add 'Home' tab, which activates when any button is pressed consecutively.
 
 ---WATER QUALITY PARAMETERS---
 
@@ -247,7 +248,7 @@
         •   'All' tab is now functioning for pre-installed fish
         •   'All' inputs reset when a new fish is selected and can change colours depending on the parameter
     V2.2:
-        •   
+        •   Table with custom parameter input added (though the 'Submit' button does not do anything for now)
 
 
 ---ASSESSMENT CRITERIA---
