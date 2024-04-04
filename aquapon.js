@@ -12,10 +12,25 @@ const buttonFish = document.querySelectorAll('.fishlink');
 const inputMulti = document.querySelectorAll('.valueInputMulti');
 const parameter = ["Temperature", "pH", "Nitrate", "Nitrite", "Ammonia"];
 const fishCustom = document.getElementById("fishCustom");
+const submitButton = document.getElementById("submitButton");
+var customFishData = {};
+const tableData = document.getElementById("customParaTable");
+var selectedFish = document.getElementById("fishSelect");
+var fishName = document.getElementById("fishName");
 
+//Resets values to default
+function defaultMultiInput() {
+    inputMulti[0].value = "25"
+    inputMulti[1].value = "7.0"
+    inputMulti[2].value = "70"
+    inputMulti[3].value = "0"
+    inputMulti[4].value = "0"
+    for (i = 0; i < inputMulti.length; i++) {
+        inputMulti[i].style.backgroundColor = "white";
+    }
+}
 
 //Checks all fish selection buttons and runs the function based on which one is chosen
-
 buttonFish.forEach(fish => {
     fish.addEventListener('click', function() {
         var i, j;
@@ -44,19 +59,9 @@ buttonFish.forEach(fish => {
         fish.style.backgroundColor = "white";
         fish.style.color = "black";
 
-        //Resets values to default
-        inputMulti[0].value = "25"
-        inputMulti[1].value = "7.0"
-        inputMulti[2].value = "70"
-        inputMulti[3].value = "0"
-        inputMulti[4].value = "0"
-        for (j = 0; j < inputMulti.length; j++) {
-            inputMulti[j].style.backgroundColor = "white";
-        }
+        defaultMultiInput()
     })
 });
-
-
 
 //Checks all parameter selection buttons and runs the function based on which one is chosen
 buttonPara.forEach(link => {
@@ -126,7 +131,6 @@ buttonPara.forEach(link => {
 })
 
 //Updates the output if the input is changed
-
 input.oninput = function() {
     //A backup function is ran if there is no value
     if (input.value == "") {
@@ -174,3 +178,91 @@ inputMulti.forEach(inputMultiPara => {
 })
 
 //Function will collect table data and organise it into an object for JSON
+submitButton.addEventListener('click', function() {
+    if (fishName.value == "") {
+        return
+    }
+
+    var newOpt = document.createElement('option');
+
+    //Resets the array for customFishData
+    customFishData = {
+        Temperature: [],
+        pH: [],
+        Nitrate: [],
+        Nitrite: [],
+        Ammonia: []
+    };
+
+    //Goes through each row, then each column (referred to as cells), and takes the value and pushes it into the customFishData array
+    for (var i = 1; i < tableData.rows.length; i++) {
+        var tableRow = tableData.rows[i];
+        //Seperate loop for first row as there are NA cells
+        if (i == 1) {
+            for (var j = 1; j < 4; j++) {
+                customFishData[parameter[j-1]].push(parseFloat(tableRow.cells[j].children[0].value));
+            }
+            //Minimum value for nitrite and ammonia is zero
+            customFishData['Nitrite'].push(0);
+            customFishData['Ammonia'].push(0);
+        }
+        if (i == 2) {
+            for (var j = 1; j < 6; j++) {
+                customFishData[parameter[j-1]].push(parseFloat(tableRow.cells[j].children[0].value));
+            }
+        }
+    }
+
+    //Checks if the fish in the name input already exists
+    if (!data.fish[fishName.value]) {
+        console.log("Fish does not currently exist!")
+        newOpt.value = fishName.value;
+        newOpt.innerHTML = fishName.value;
+        //If "Custom" is not selected, edit currently selected fish's data
+        if (selectedFish.value !== "Custom") {
+            console.log("Replacing...")
+            delete data.fish[selectedFish.value];
+            for (var i = 0; i < selectedFish.length; i++) {
+                if (selectedFish.options[i].value == selectedFish.value) {
+                    selectedFish.remove(i);
+                }
+            }
+        }
+        selectedFish.appendChild(newOpt);
+        selectedFish.value = newOpt.value;
+    }
+    
+    //Checks if custom fish already exists
+    if (selectedFish.value == "Custom" && data.fish[fishName.value]) {
+        console.log("Fish already exists!")
+    }
+
+    //Adds or updates data for new fish
+    data.fish[fishName.value] = customFishData;
+    console.log(data.fish);
+    fishId = selectedFish.value;
+    console.log(fishId);
+})
+
+//Changes name input and table values when selected
+selectedFish.addEventListener('change', function() {
+    fishName.value = selectedFish.value;
+    fishId = selectedFish.value;
+    for (var i = 1; i < tableData.rows.length; i++) {
+        var tableRow = tableData.rows[i];
+        //Seperate loop for first row as there are NA cells
+        if (i == 1) {
+            for (var j = 1; j < 4; j++) {
+                console.log(tableRow.cells[j].children[0].value)
+                console.log(data.fish[fishId][parameter[j-1]][0])
+                tableRow.cells[j].children[0].value = data.fish[fishId][parameter[j-1]][0];
+            }
+        }
+        if (i == 2) {
+            for (var j = 1; j < 6; j++) {
+                tableRow.cells[j].children[0].value = data.fish[fishId][parameter[j-1]][1];
+            }
+        }
+    }
+    defaultMultiInput()
+})

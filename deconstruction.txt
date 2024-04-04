@@ -236,7 +236,6 @@
         •   Updated information in JSON file
         •   Changed input style
         •   Shortened input code significantly
-        •   
     V2.0:
         Program is now has data on common fishes used in Australian aquaponics. The program lets users select one of five fishes, which then the program will give a brief description of them. The user can then select a parameter to test out of the five available.
         •   Finished description for all fish
@@ -249,6 +248,9 @@
         •   'All' inputs reset when a new fish is selected and can change colours depending on the parameter
     V2.2:
         •   Table with custom parameter input added (though the 'Submit' button does not do anything for now)
+    V2.3:
+        •   Table with custom parameter now works! Pressing submit will either add a fish if it does not already exist, or edit one if a fish is already selected
+        •   'All' tab works for selected custom fish
 
 
 ---ASSESSMENT CRITERIA---

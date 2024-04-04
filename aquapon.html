@@ -12,7 +12,7 @@
 </head>
 <body id="bg">
     <div class="hide">
-        <p>AQUAPONICS SYSTEM V2.2 :3</p>
+        <p>AQUAPONICS SYSTEM V2.3 :3</p>
     </div>
     <div class="fish-nav">
         <button class="fishlink" id="Barramundi" index="0">Barramundi</button>
@@ -24,9 +24,11 @@
     </div>
     <div class="desc-tab" id="descTab">
         <div id="fishIndividual">
-            <p id="description"><h1>Welcome to version V2.2 of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input will tell you off). This version includes:
+            <p id="description"><h1>Welcome to version V2.3 of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input will tell you off). This version includes:
                 <ul>
                     <li>A custom tab for custom parameters</li>
+                    <li>Functioning custom fish</li>
+                    <li>'All' tab now works for custom fish</li>
                 </ul>
             </h1></p>
         </div>
@@ -35,7 +37,7 @@
             <select name="fishSelect" id="fishSelect">
                 <option value="Custom">Custom</option>
             </select>
-            <input id="fishName" name="fishName" type="text" placeholder="Name of fish here"></input>
+            <input id="fishName" name="fishName" type="text" placeholder="Name of fish here" autocomplete="off"></input>
             <table id="customParaTable">
                 <tr style="background-color: rgb(255, 255, 255); color: black;">
                     <td style="border:none; background-color: black;"></td>
@@ -56,8 +58,8 @@
                     <td>
                         <input type="number" name="nitraMin" id="nitraMin" value="30" step="0.1">
                     </td>
-                    <td style="background-color: rgb(210, 210, 210);">NA</td>
-                    <td style="background-color: rgb(210, 210, 210);">NA</td>
+                    <td value="0" style="background-color: rgb(210, 210, 210);">NA</td>
+                    <td value="0" style="background-color: rgb(210, 210, 210);">NA</td>
                 </tr>
                 <tr style="background-color: rgb(255, 145, 145); color: black;">
                     <td style="border-radius: 0 0 0 20px;">Maximum</td>
@@ -78,7 +80,7 @@
                     </td>
                 </tr>
             </table>
-            <button type="submit">Submit parameters!</button>
+            <button type="submit" id="submitButton">Submit parameters!</button>
         </div>
     </div>
     <div class="para-nav">

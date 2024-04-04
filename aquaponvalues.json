@@ -91,8 +91,12 @@
         },
 
         "Custom":{
-            "description": "<h1>Custom Fish</h1> This tab will allow you to input custom water quality parameter levels.<br><br>Please input the name of the fish, the minimum and maximum values for the temperature, pH, and nitrate, and just the maximum for the nitrite and ammonia (as there is no minimum). Afterwards, press submit and the program will add the data to the local database (or whatever its properly called) to be used in the future. Use the dropdown menu to select from the custom fishes. Deleting fish is currently not possible."
-
+            "Temperature": [20,30],
+            "pH": [6,8],
+            "Nitrate": [30,150],
+            "Nitrite": [0,0],
+            "Ammonia": [0,0],
+            "description": "<h1>Custom Fish</h1> This tab will allow you to input custom water quality parameter levels.<br><br>Please input the name of the fish, the minimum and maximum values for the temperature, pH, and nitrate, and just the maximum for the nitrite and ammonia (as there is no minimum). Afterwards, press submit and the program will add the data to the local database (or whatever its properly called) to be used in the future. Use the dropdown menu to select from the custom fishes. To add a new fish, select Custom. Deleting fish is currently not possible. To edit a fish, select the fish. This allows for the name or the parameters of the fish to be changed."
         }
     }
 }
