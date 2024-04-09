@@ -220,7 +220,6 @@ body,html {
 }
 #valueEnter {
     display: none;
-
 }
 #valueOutput {
     background-color: rgb(255,255,255,0.5);
@@ -240,7 +239,6 @@ body,html {
 #multiPara {
     display: none;
 }
-
 .inputGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -274,4 +272,24 @@ body,html {
     border-radius: 0px 0px 20px 20px;
     border: 2px solid black;
     width: 100%;
+}
+#simulation {
+    display: block;
+    font-size: 25px;
+    margin: 1em auto 0 auto;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    padding: 0.5em;
+    cursor: pointer;
+    font-family: "Comfortaa";
+    transition-duration: 0.2s;
+}
+#simulation:hover {
+    background-color: rgb(255, 255, 255);
+}
+.active {
+    background-color: rgb(159, 255, 150);
+}
+.inactive {
+    background-color: rgb(255, 150, 150);
 }

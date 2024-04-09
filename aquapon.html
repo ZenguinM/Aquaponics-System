@@ -12,7 +12,7 @@
 </head>
 <body id="bg">
     <div class="hide">
-        <p>AQUAPONICS SYSTEM V2.4 :3</p>
+        <p>AQUAPONICS SYSTEM V2.5 :3</p>
     </div>
     <div class="fish-nav">
         <button class="fishlink" id="Barramundi">Barramundi</button>
@@ -24,13 +24,14 @@
     </div>
     <div class="desc-tab" id="descTab">
         <div id="fishIndividual">
-            <p id="description"><h1>Welcome to version V2.4 of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input will tell you off). This version includes:
+            <p id="description"><h1>Welcome to version V2.5 of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input will tell you off). This version includes:
                 <ul>
                     <li>A custom tab for custom parameters</li>
                     <li>Functioning custom fish</li>
                     <li>'All' tab now works for custom fish</li>
                     <li>Error checking for table: rejects inappropriate values and nameless fish</li>
                     <li>Additional information removed for custom fish</li>
+                    <li>Aquaponics simulation functionality added</li>
                 </ul>
             </h1></p>
         </div>
@@ -111,7 +112,7 @@
             </div>
         </div>
         <div id="multiPara">
-            <p><h1>All</h1>This mode allows for all water quality parameters to be tested at once. Use the inputs below to check the suitability of each parameter for the chosen fish. The colour of the input will change to red if it is too high and to blue if it is to low. Green indicates the level is suitable.<br><br>Press the "Start simulation" button to simulate a live recording of each parameter. Values will randomly increase or decrease every second and each parameter can be observed for changes. Parameters that are not suitable will have higher probabilities of adjusting to the fit conditions, simulating what an automatic water parameter adjusters. For example, if the water is too hot, the simulation will have a higher probability to reduce the heat caused by a water cooler being activated in the system.</p>
+            <p><h1>All</h1>This mode allows for all water quality parameters to be tested at once. Use the inputs below to check the suitability of each parameter for the chosen fish. The colour of the input will change to red if it is too high and to blue if it is to low. Green indicates the level is suitable.<br><br>Press the "Start simulation" button to simulate a live recording of each parameter. Values will randomly increase or decrease every 0.1 seconds and each parameter can be observed for changes. <br><br>[MAY GET REMOVED] Parameters that are not suitable will have higher probabilities of adjusting to the fit conditions, simulating what an automatic water parameter adjusters. For example, if the water is too hot, the simulation will have a higher probability to reduce the heat caused by a water cooler being activated in the system.</p>
             <div class="inputGrid">
                 <p class="gridTitle">Temperature</p>
                 <p class="gridTitle">pH</p>
@@ -124,7 +125,9 @@
                 <input class="valueInputMulti" type="number" step="0.1" min="0" value="0" placeholder="ppm">
                 <input class="valueInputMulti" type="number" step="0.1" min="0" value="0" placeholder="ppm">
             </div>
+            <button id="simulation" class="inactive">Start simulation</button>
         </div>
+
     </div>
     <script src="./aquapon.js" type="module"></script>
 </body>

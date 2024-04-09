@@ -259,7 +259,8 @@
         •   Program regects custom fish if the minimum and maximum value pairs are not appropriate (i.e. maximum is less than minimum)
         •   Minimum input value for custom fish parameters added
     V2.5:
-        •   
+        •   Added a 'Start Simulation' button
+        •   Aquaponics simulation function implemented
 
 
 ---ASSESSMENT CRITERIA---

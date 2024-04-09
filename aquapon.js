@@ -1,4 +1,4 @@
-import data from "./aquaponvalues.json" assert {type: "json"};
+import data from "./aquaponvalues.json" with {type: "json"};
 const info = document.getElementById("info");
 const addInfo = document.getElementById("addInfo");
 const description = document.getElementById("fishIndividual");
@@ -18,6 +18,9 @@ const tableData = document.getElementById("customParaTable");
 var selectedFish = document.getElementById("fishSelect");
 var fishName = document.getElementById("fishName");
 const warningError = document.getElementById("warningError");
+const simulButton = document.getElementById("simulation");
+let simulToggle = false;
+let toggleInterval;
 
 //Resets multiple input values to default
 function defaultMultiInput() {
@@ -262,12 +265,10 @@ submitButton.addEventListener('click', function() {
 
     //Checks if the fish in the name input already exists
     if (!data.fish[fishName.value]) {
-        console.log("Fish does not currently exist!")
         newOpt.value = fishName.value;
         newOpt.innerHTML = fishName.value;
         //If "Custom" is not selected, edit currently selected fish's data
         if (selectedFish.value !== "Custom") {
-            console.log("Replacing...")
             delete data.fish[selectedFish.value];
             for (var i = 0; i < selectedFish.length; i++) {
                 if (selectedFish.options[i].value == selectedFish.value) {
@@ -281,7 +282,9 @@ submitButton.addEventListener('click', function() {
     
     //Checks if custom fish already exists
     if (selectedFish.value == "Custom" && data.fish[fishName.value]) {
-        console.log("Fish already exists!")
+        warningError.style.display = "block";
+        warningError.innerHTML = "The fish already exists!";
+        return
     }
 
     //Adds or updates data for new fish
@@ -314,3 +317,47 @@ selectedFish.addEventListener('change', function() {
     }
     defaultMultiInput()
 })
+
+simulButton.addEventListener('click', function() {
+    //Toggles between 'On' and 'Off'
+    simulToggle = !simulToggle;
+    
+    if (simulToggle) {
+        toggleInterval = setInterval(simulationTester, 50);
+        simulButton.innerHTML = "Stop simulation";
+        simulButton.classList.add("active");
+        simulButton.classList.remove("inactive");
+    } else {
+        clearInterval(toggleInterval);
+        simulButton.innerHTML = "Start simulation";
+        simulButton.classList.add("inactive");
+        simulButton.classList.remove("active");
+    }
+})
+
+function simulationTester() {
+    var i, random, newValue;
+
+    for (i = 0; i < inputMulti.length; i++) {
+        //Generates a random number between 0 and 2 inclusive
+        random = Math.floor(Math.random() * 4);
+        if (random == 0) {
+            newValue = Math.round((parseFloat(inputMulti[i].value) + 0.1) * 100) / 100
+            //Checks for negative values
+            if (newValue < 0) {newValue = 0;}
+            inputMulti[i].value = newValue
+        } else if (random == 3) {
+            newValue = Math.round((parseFloat(inputMulti[i].value) - 0.1) * 100) / 100
+            if (newValue < 0) {newValue = 0;}
+            inputMulti[i].value = newValue
+        }
+
+        if (inputMulti[i].value > data.fish[fishId][parameter[i]][1]) {
+            inputMulti[i].style.backgroundColor = "rgb(255,140,128)";
+        } else if (inputMulti[i].value < data.fish[fishId][parameter[i]][0]) {
+            inputMulti[i].style.backgroundColor = "rgb(110, 165, 227)";
+        } else {
+            inputMulti[i].style.backgroundColor = "rgb(138,252,136)";
+        }
+    }
+}
