@@ -241,16 +241,25 @@
         •   Finished description for all fish
         •   Added suggestions for when the parameter is unsuitable
         •   Added an 'All' tab for all parameters to be tested at once (WIP)
-        •   Inputs that should NOT be negative are caught by the program    and asked to be changed
+        •   Inputs that should NOT be negative are caught by the program and asked to be changed
         •   Program asks to select a fish if an inputs is made without selecting a fish
+        •   Photo removed
     V2.1:
         •   'All' tab is now functioning for pre-installed fish
         •   'All' inputs reset when a new fish is selected and can change colours depending on the parameter
     V2.2:
         •   Table with custom parameter input added (though the 'Submit' button does not do anything for now)
     V2.3:
-        •   Table with custom parameter now works! Pressing submit will either add a fish if it does not already exist, or edit one if a fish is already selected
+        •   Table with custom parameter now works! Pressing 'Submit' will either add a fish if it does not already exist, or edit one if a fish is already selected
         •   'All' tab works for selected custom fish
+        •   Table values change when custom fish is selected
+    V2.4:
+        •   Added warning for custom fish if the input is empty
+        •   Removed additional temperature information for custom fish
+        •   Program regects custom fish if the minimum and maximum value pairs are not appropriate (i.e. maximum is less than minimum)
+        •   Minimum input value for custom fish parameters added
+    V2.5:
+        •   
 
 
 ---ASSESSMENT CRITERIA---

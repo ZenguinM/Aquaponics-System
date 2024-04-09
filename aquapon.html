@@ -12,10 +12,10 @@
 </head>
 <body id="bg">
     <div class="hide">
-        <p>AQUAPONICS SYSTEM V2.3 :3</p>
+        <p>AQUAPONICS SYSTEM V2.4 :3</p>
     </div>
     <div class="fish-nav">
-        <button class="fishlink" id="Barramundi" index="0">Barramundi</button>
+        <button class="fishlink" id="Barramundi">Barramundi</button>
         <button class="fishlink" id="Murray Cod">Murray Cod</button>
         <button class="fishlink" id="Jade Perch">Jade Perch</button>
         <button class="fishlink" id="Rainbow Trout">Rainbow Trout</button>
@@ -24,11 +24,13 @@
     </div>
     <div class="desc-tab" id="descTab">
         <div id="fishIndividual">
-            <p id="description"><h1>Welcome to version V2.3 of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input will tell you off). This version includes:
+            <p id="description"><h1>Welcome to version V2.4 of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input will tell you off). This version includes:
                 <ul>
                     <li>A custom tab for custom parameters</li>
                     <li>Functioning custom fish</li>
                     <li>'All' tab now works for custom fish</li>
+                    <li>Error checking for table: rejects inappropriate values and nameless fish</li>
+                    <li>Additional information removed for custom fish</li>
                 </ul>
             </h1></p>
         </div>
@@ -50,13 +52,13 @@
                 <tr style="background-color: rgb(167, 255, 173); color: black;">
                     <td style="border-radius: 20px 0 0 0;">Minimum</td>
                     <td class="input-cell">
-                        <input type="number" name="tempMin" id="tempMin" value="20" step="0.1">
+                        <input type="number" name="tempMin" id="tempMin" value="20" step="0.1" min="0">
                     </td>
                     <td>
-                        <input type="number" name="phMin" id="phMin" value="6.0" step="0.1">
+                        <input type="number" name="phMin" id="phMin" value="6.0" step="0.1" min="0">
                     </td>
                     <td>
-                        <input type="number" name="nitraMin" id="nitraMin" value="30" step="0.1">
+                        <input type="number" name="nitraMin" id="nitraMin" value="30" step="0.1" min="0">
                     </td>
                     <td value="0" style="background-color: rgb(210, 210, 210);">NA</td>
                     <td value="0" style="background-color: rgb(210, 210, 210);">NA</td>
@@ -64,23 +66,24 @@
                 <tr style="background-color: rgb(255, 145, 145); color: black;">
                     <td style="border-radius: 0 0 0 20px;">Maximum</td>
                     <td>
-                        <input type="number" name="tempMax" id="tempMax" value="30" step="0.1">
+                        <input type="number" name="tempMax" id="tempMax" value="30" step="0.1" min="0">
                     </td>
                     <td>
-                        <input type="number" name="phMax" id="phMax" value="8.0" step="0.1">
+                        <input type="number" name="phMax" id="phMax" value="8.0" step="0.1" min="0">
                     </td>
                     <td>
-                        <input type="number" name="nitraMax" id="nitraMax" value="150" step="0.1">
+                        <input type="number" name="nitraMax" id="nitraMax" value="150" step="0.1" min="0">
                     </td>
                     <td>
-                        <input type="number" name="nitriMax" id="nitriMax" value="0" step="0.1">
+                        <input type="number" name="nitriMax" id="nitriMax" value="0" step="0.1" min="0">
                     </td>
                     <td>
-                        <input type="number" name="ammoMax" id="ammoMax" value="0" step="0.1">
+                        <input type="number" name="ammoMax" id="ammoMax" value="0" step="0.1" min="0">
                     </td>
                 </tr>
             </table>
             <button type="submit" id="submitButton">Submit parameters!</button>
+            <p id="warningError">Warning goes here...</p>
         </div>
     </div>
     <div class="para-nav">
@@ -94,10 +97,10 @@
     <div class="content" id="content">
         <div id="singlePara">
             <div class="info" id="info">
-                <p>Description on the parameter and input will appear here after selecting a parameter.</p>
+                <p>Description on the parameter and input will appear here after selecting both a fish and a parameter.</p>
             </div>
             <div class="add-info" id="addInfo">
-                <p>More information about the temperature will appear here! If you see this, it's because you have not selected a fish yet!</p>
+                <p></p>
             </div>
             <div id="valueEnter">
                 <p>Enter value here:</p>
