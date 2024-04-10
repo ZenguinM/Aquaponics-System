@@ -261,7 +261,13 @@
     V2.5:
         •   Added a 'Start Simulation' button
         •   Aquaponics simulation function implemented
-
+    V2.6:
+        •   pH range added (0 to 14) (min and max for inputs)
+        •   Warning added for pH values that are outside of range
+        •   Simulator increments nitrate by 1 instead of 0.1
+        •   pH, nitrite, and ammonia increment less frequently (10% compared to 30%)
+        •   Few wording fixes
+        •   Fixed bug with imported Custom fish not being selected after selecting pre-installed fish
 
 ---ASSESSMENT CRITERIA---
 

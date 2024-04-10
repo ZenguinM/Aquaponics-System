@@ -3,7 +3,7 @@ body,html {
     margin: 10px;
     font-family: "Comfortaa";
     font-size: 20px;
-    height: 1500px;
+    height: auto;
 }
 .hide {
     height: 90px;

@@ -38,12 +38,12 @@ function defaultMultiInput() {
 buttonFish.forEach(fish => {
     fish.addEventListener('click', function() {
         fishId = this.id;
-        console.log(fishId)
 
         if (fishId !== "Custom") {
             fishCustom.style.display = "none";
         } else {
             fishCustom.style.display = "block";
+            fishId = selectedFish.value; 
         }
         
         input.value = "";
@@ -74,6 +74,8 @@ buttonFish.forEach(fish => {
         fish.style.color = "black";
 
         defaultMultiInput()
+
+        console.log(fishId)
     })
 });
 
@@ -151,12 +153,13 @@ buttonPara.forEach(link => {
             content.style.backgroundColor = "rgb(108, 71, 163)";
             link.style.backgroundColor = "rgb(108, 71, 163)";
         };
+        console.log(fishId)
     });
 })
 
 //Updates the output if the input is changed
 input.oninput = function() {
-    //A backup function is ran if there is no value and if a fish is not selected yet
+    //A backup function is ran if there is no value
     if (input.value == "") {
         output.innerHTML = "Awaiting value..."
         output.style.backgroundColor = "rgb(255,255,255,0.5)"
@@ -177,7 +180,7 @@ input.oninput = function() {
             Suggestion: ${data.parameter[paraId].increasing}`
             output.style.backgroundColor = "rgb(110, 165, 227)"
         } else {
-            output.innerHTML = `The ${paraId.toLowerCase()} is ideal for the ${fishId.toLowerCase()}.`
+            output.innerHTML = `The ${paraId.toLowerCase()} is ideal for ${fishId}.`
             output.style.backgroundColor = "rgb(138,252,136)"
         }
     }
@@ -216,6 +219,15 @@ submitButton.addEventListener('click', function() {
         if (min > max) {
             warningError.style.display = "block"
             warningError.innerHTML = "Error: Maximum and minimum values not appropriate!<br><br>Please check that the maximum values are not less than the minimum values (only for temperature, pH, and nitrate)!"
+            return
+        }
+    }
+
+    //Checks pH is within range 0 to 14
+    for (var i = 1; i < 3; i++) {
+        if (parseFloat(tableData.rows[i].cells[2].children[0].value) > 14) {
+            warningError.style.display = "block"
+            warningError.innerHTML = "Error: pH values are not appropriate!<br><br>Please check that pH is within 0 to 14!"
             return
         }
     }
@@ -289,9 +301,7 @@ submitButton.addEventListener('click', function() {
 
     //Adds or updates data for new fish
     data.fish[fishName.value] = customFishData;
-    console.log(data.fish);
     fishId = selectedFish.value;
-    console.log(fishId);
     warningError.style.display = "none"   
 })
 
@@ -304,8 +314,6 @@ selectedFish.addEventListener('change', function() {
         //Seperate loop for first row as there are NA cells
         if (i == 1) {
             for (var j = 1; j < 4; j++) {
-                console.log(tableRow.cells[j].children[0].value)
-                console.log(data.fish[fishId][parameter[j-1]][0])
                 tableRow.cells[j].children[0].value = data.fish[fishId][parameter[j-1]][0];
             }
         }
@@ -339,16 +347,43 @@ function simulationTester() {
     var i, random, newValue;
 
     for (i = 0; i < inputMulti.length; i++) {
-        //Generates a random number between 0 and 2 inclusive
-        random = Math.floor(Math.random() * 4);
-        if (random == 0) {
-            newValue = Math.round((parseFloat(inputMulti[i].value) + 0.1) * 100) / 100
+        //Generates a random number between 0 and 9 inclusive
+        random = Math.floor(Math.random() * 10);
+        //30% chance of changing
+        if (random <= 2) {
+            //Nitrates have bigger ranges, thus the simulator adds or subtracts 1 instead of 0.1
+            if (i == 2) {
+                newValue = Math.round((parseFloat(inputMulti[i].value) + 1) * 100) / 100
+            } 
+            //Reduces the chances of nitrite, pH, and ammonia changing as these parameters have low ranges (10% change of changing)
+            else if (i == 1 || i == 3 || i == 4) {
+                if (random == 0) {
+                    newValue = Math.round((parseFloat(inputMulti[i].value) + 0.1) * 100) / 100
+                } else {
+                    newValue = inputMulti[i].value
+                }
+            } else {
+                newValue = Math.round((parseFloat(inputMulti[i].value) + 0.1) * 100) / 100
+            }
             //Checks for negative values
             if (newValue < 0) {newValue = 0;}
+            //Checks pH is not over 14
+            if (i == 1 && newValue > 14) {newValue = 14;}
             inputMulti[i].value = newValue
-        } else if (random == 3) {
-            newValue = Math.round((parseFloat(inputMulti[i].value) - 0.1) * 100) / 100
+        } else if (random >= 7) {
+            if (i == 2) {
+                newValue = Math.round((parseFloat(inputMulti[i].value) - 1) * 100) / 100
+            } else if (i == 1 || i == 3 || i == 4) {
+                if (random == 7) {
+                    newValue = Math.round((parseFloat(inputMulti[i].value) - 0.1) * 100) / 100
+                } else {
+                    newValue = inputMulti[i].value
+                }
+            } else {
+                newValue = Math.round((parseFloat(inputMulti[i].value) - 0.1) * 100) / 100
+            }
             if (newValue < 0) {newValue = 0;}
+            if (i == 1 && newValue > 14) {newValue = 14;}
             inputMulti[i].value = newValue
         }
 

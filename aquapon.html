@@ -12,7 +12,7 @@
 </head>
 <body id="bg">
     <div class="hide">
-        <p>AQUAPONICS SYSTEM V2.5 :3</p>
+        <p>AQUAPONICS SYSTEM V2.6 :3</p>
     </div>
     <div class="fish-nav">
         <button class="fishlink" id="Barramundi">Barramundi</button>
@@ -24,7 +24,7 @@
     </div>
     <div class="desc-tab" id="descTab">
         <div id="fishIndividual">
-            <p id="description"><h1>Welcome to version V2.5 of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input will tell you off). This version includes:
+            <p id="description"><h1>Welcome to version V2.6 of this aquaponics system! Please select a 🐟 before selecting the parameter (else the input will tell you off). This version includes:
                 <ul>
                     <li>A custom tab for custom parameters</li>
                     <li>Functioning custom fish</li>
@@ -32,6 +32,7 @@
                     <li>Error checking for table: rejects inappropriate values and nameless fish</li>
                     <li>Additional information removed for custom fish</li>
                     <li>Aquaponics simulation functionality added</li>
+                    <li>Simulation chances changed: More realistic increments for pH, nitrite, and ammonia</li>
                 </ul>
             </h1></p>
         </div>
@@ -56,10 +57,10 @@
                         <input type="number" name="tempMin" id="tempMin" value="20" step="0.1" min="0">
                     </td>
                     <td>
-                        <input type="number" name="phMin" id="phMin" value="6.0" step="0.1" min="0">
+                        <input type="number" name="phMin" id="phMin" value="6.0" step="0.1" min="0" max="14">
                     </td>
                     <td>
-                        <input type="number" name="nitraMin" id="nitraMin" value="30" step="0.1" min="0">
+                        <input type="number" name="nitraMin" id="nitraMin" value="30" step="1" min="0">
                     </td>
                     <td value="0" style="background-color: rgb(210, 210, 210);">NA</td>
                     <td value="0" style="background-color: rgb(210, 210, 210);">NA</td>
@@ -70,10 +71,10 @@
                         <input type="number" name="tempMax" id="tempMax" value="30" step="0.1" min="0">
                     </td>
                     <td>
-                        <input type="number" name="phMax" id="phMax" value="8.0" step="0.1" min="0">
+                        <input type="number" name="phMax" id="phMax" value="8.0" step="0.1" min="0" max="14">
                     </td>
                     <td>
-                        <input type="number" name="nitraMax" id="nitraMax" value="150" step="0.1" min="0">
+                        <input type="number" name="nitraMax" id="nitraMax" value="150" step="1" min="0">
                     </td>
                     <td>
                         <input type="number" name="nitriMax" id="nitriMax" value="0" step="0.1" min="0">
@@ -112,7 +113,7 @@
             </div>
         </div>
         <div id="multiPara">
-            <p><h1>All</h1>This mode allows for all water quality parameters to be tested at once. Use the inputs below to check the suitability of each parameter for the chosen fish. The colour of the input will change to red if it is too high and to blue if it is to low. Green indicates the level is suitable.<br><br>Press the "Start simulation" button to simulate a live recording of each parameter. Values will randomly increase or decrease every 0.1 seconds and each parameter can be observed for changes. <br><br>[MAY GET REMOVED] Parameters that are not suitable will have higher probabilities of adjusting to the fit conditions, simulating what an automatic water parameter adjusters. For example, if the water is too hot, the simulation will have a higher probability to reduce the heat caused by a water cooler being activated in the system.</p>
+            <p><h1>All</h1>This mode allows for all water quality parameters to be tested at once. Use the inputs below to check the suitability of each parameter for the chosen fish. The colour of the input will change to red if it is too high and to blue if it is to low. Green indicates the level is suitable.<br><br>Press the "Start simulation" button to simulate a live recording of each parameter. Values will randomly increase or decrease every 0.1 seconds and each parameter can be observed for changes.</p>
             <div class="inputGrid">
                 <p class="gridTitle">Temperature</p>
                 <p class="gridTitle">pH</p>
@@ -120,14 +121,13 @@
                 <p class="gridTitle">Nitrite</p>
                 <p class="gridTitle">Ammonia</p>
                 <input class="valueInputMulti" type="number" step="0.1" min="0" value="25" placeholder="°C">
-                <input class="valueInputMulti" type="number" step="0.1" min="0" value="7.0" placeholder="pH">
-                <input class="valueInputMulti" type="number" step="0.1" min="0" value="70" placeholder="ppm">
+                <input class="valueInputMulti" type="number" step="0.1" min="0" max="14" value="7.0" placeholder="pH">
+                <input class="valueInputMulti" type="number" step="1" min="0" value="70" placeholder="ppm">
                 <input class="valueInputMulti" type="number" step="0.1" min="0" value="0" placeholder="ppm">
                 <input class="valueInputMulti" type="number" step="0.1" min="0" value="0" placeholder="ppm">
             </div>
             <button id="simulation" class="inactive">Start simulation</button>
         </div>
-
     </div>
     <script src="./aquapon.js" type="module"></script>
 </body>
