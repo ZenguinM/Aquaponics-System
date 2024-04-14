@@ -1,4 +1,5 @@
 {
+    "homepage": "<h1>Welcome to the Aquaponics System V3.0!<h1><h3>This website is used to check if different fish are able to live in different levels of water quality parameters. The only parameters that can be tested are temperature, pH, nitrate, nitrite, and ammonia. <p>There are also 5 pre-installed fishes shown above with information, as well as a custom tab to manually add in your own fishes with their own parameters. The 6 parameter tabs below allow you to check either one or all of them.<p>To use this program, first select a fish to check. Instructions for how to use the 'Custom' fish shown when it is clicked. Then select a parameter, or all of them. Selecting a single parameter provides detailed information on what the parameter is, its impacts, the input for the value (obviously) and how to improve it if it is too low or too high for the fish. The 'All' tab will check all parameters at once, but will not give the information shown in single parameter tabs.<h3>",
 
     "parameter": {
 

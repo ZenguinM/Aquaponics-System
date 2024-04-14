@@ -5,7 +5,7 @@
     PROBLEM:        
         The Science Faculty need you to create a practical solution to a problem in Biology. For some time now, a Biology teacher has been trying to get an aquaponics system functioning properly, but they are experiencing problems maintaining the balance of pH, ammonia, nitrates and nitrites. The teacher needs a monitoring system that will alert them to variations in the concentrations of any of the variables listed above. They also require a temperature indicator.
     ADDITONAL INFO: 
-        In an aquaponics system, constantly monitoring the parameters is preferred, rather than checking the values every time. The biology teacher may want this to observe any trends in their data and to be able to be alerted for any issues when they are not physically present. This can help optimize preformance and troubleshoot the aquaponics system. Adjustments to the water could be automated by running a function that connects to another program which adjusts the water quality appropriately. For example, if the water becomes dangerously hot, the water cooler will be turned on by the program. This extension is a bit hefty because the program required to run such system may require external connections. Using electronic sensors to measure the parameters may be a problem.
+        In an aquaponics system, constantly monitoring the parameters is preferred, rather than checking the values every time. The biology teacher may want this to observe any trends in their data and to be able to be alerted for any issues when they are not physically present. This can help optimize performance and troubleshoot the aquaponics system. Adjustments to the water could be automated by running a function that connects to another program which adjusts the water quality appropriately. For example, if the water becomes dangerously hot, the water cooler will be turned on by the program. This extension is a bit hefty because the program required to run such system may require external connections. Using electronic sensors to measure the parameters may be a problem.
 
 ---PLANNING---
 
@@ -52,15 +52,15 @@
         Description:    
             Temperature is vital for bacteria and nutrient breakdown and uptake by plants and fish. Many factors can affect temperature such as climate, materials, and systems. Generally, the water temperature should ranger between 20°C - 30°C, however this differs between fish, plants, and bacteria. 
         Effect:         
-            High temperatures can affect a plant's dissolved oxygen, cause wilting, and death. Cold will affect growth. Fish cannot regulate body temperatures, so knowing the category offish is vital (cold, cool, and warm water fish). Optimal temperatures help with healthgrowth, reduce stress and diseases, and feeding. High temperatures affect metabolism and oxygen requirements.
+            High temperatures can affect a plant's dissolved oxygen, cause wilting, and death. Cold will affect growth. Fish cannot regulate body temperatures, so knowing the category of the fish is vital (cold, cool, and warm water fish). Optimal temperatures help with health growth, reduce stress and diseases, and feeding. High temperatures affect metabolism and oxygen requirements.
         Decreasing:     
-            If the system is outside, use a shade cloth above it to reduce the impact of sunlight onthe water. This will also decrease algae growth, which may be preferred. A tank chiller can also help, but is more costly. Embedding the fish tanks underground will help with insulating the tank, but this will also depend on the temperature of the ground.
+            If the system is outside, use a shade cloth above it to reduce the impact of sunlight on the water. This will also decrease algae growth, which may be preferred. A tank chiller can also help, but is more costly. Embedding the fish tanks underground will help with insulating the tank, but this will also depend on the temperature of the ground.
         Increasing:
             During cold months, preserving the heat of the system is vital. This can be done by insulating the tank with reflective foil or cloth. If the tanks are in a greenhouse, an air or tank heater can be used instead. Ensure tanks are suspended from the floor if it the floor gets too cold.
     
     pH:
         Description:    
-            pH measures the acidity or alkalinity of the water. It can affect the solubilty and uptake of nutrients, microbial activity, and system stability. Factors affecting pH include fish waste, plant uptake, carbon dioxide levels, and water quality. Generally, the pH should be around 6.5 to 7.5.
+            pH measures the acidity or alkalinity of the water. It can affect the solubility and uptake of nutrients, microbial activity, and system stability. Factors affecting pH include fish waste, plant uptake, carbon dioxide levels, and water quality. Generally, the pH should be around 6.5 to 7.5.
         Effect:         
             Poor pH can result in stunted plant growths and poor yields, nutrient deficiency, toxicity, increased stress and diseases. Note that plants do prefer a bit more acidic water.
         Decreasing:
@@ -74,13 +74,13 @@
         Effect:
             It, as well as nitrogen, is necessary for fish and plant growth, and the cycle reduces ammonia in the system. Proper nitrates maximises crop yield. 
         Decreasing:
-            Backwashing or changing the water can help to reduce nitrate leveles if needed. Implementing more plants can help increase nitrate intake by plants. Removing fish or reducing feeding amounts can also help.
+            Backwashing or changing the water can help to reduce nitrate levels if needed. Implementing more plants can help increase nitrate intake by plants. Removing fish or reducing feeding amounts can also help.
         Increasing:
             Increasing nitrates can be done by adding more fish or increasing feeding amounts as fish food contains small amounts of nitrates. Adding bacteria can help, but prior research on compatibility is required.
 
     NITRITE:
         Description:
-            Intermittent stage between the conversion between ammonia to nitrate. Nitrification is maximised at atound 25°C to 30°C. This process also reduces pH and uses oxygen. Generally, nitrites should be at 0 ppm.
+            Intermittent stage between the conversion between ammonia to nitrate. Nitrification is maximised at around 25°C to 30°C. This process also reduces pH and uses oxygen. Generally, nitrites should be at 0 ppm.
         Effect:         
             Nitrite levels above 0.75 ppm can cause stress, above 5 ppm is toxic to fish. It can kill fish by affecting their oxygen intake, even if the dissolved oxygen is sufficient.
         Decreasing:
@@ -92,7 +92,7 @@
             Excreted by fish, ammonia is the starter for the nitrogen cycle which helps with the plants at the end. It can also come from fish food. Ammonia and pH levels are usually related; high ammonia means high pH and vice versa.
         Effect:         
             Ammonia poisoning can cause damage to fish, impair fish growth, reduce resistance to diseases, and death. Not enough ammonia will affect plant growth. Bacteria will begin to die at levels higher than 4 ppm. Ammonia tolerance varies between fish species.
-        Reducing:
+        Decreasing:
             Steps to reduce ammonia include: reduce feeding, remove solids accumulation through the biofilters, and water changes. Repeat periodically until the levels reach the desired amount. Be careful not to cause ammonia shock by doing small changes over time, instead of one moment.
 
 ---PLANTS---
@@ -268,6 +268,10 @@
         •   pH, nitrite, and ammonia increment less frequently (10% compared to 30%)
         •   Few wording fixes
         •   Fixed bug with imported Custom fish not being selected after selecting pre-installed fish
+    V3.0:
+        Program now supports custom fishes and can test all parameters at once. Simulation function finalised.
+        •   Added while loops
+        •   Added home page with tutorial
 
 ---ASSESSMENT CRITERIA---
 
@@ -295,7 +299,7 @@
 
     DEVELOPMENT AND EVALUATION:
         DE1	Design and creation of digital solutions or a prototype
-            •	A user interface that is intuitive and easy to use, requiring minimal inputs frm the user
+            •	A user interface that is intuitive and easy to use, requiring minimal inputs from the user
             •	Use a software development tool to support code development
             •	Develop code feature by feature.
             •	Keep different versions of your code as each feature is added (this will be important for task 4 too)

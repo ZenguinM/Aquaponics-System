@@ -21,6 +21,7 @@ const warningError = document.getElementById("warningError");
 const simulButton = document.getElementById("simulation");
 let simulToggle = false;
 let toggleInterval;
+description.innerHTML = data.homepage
 
 //Resets multiple input values to default
 function defaultMultiInput() {
@@ -64,18 +65,18 @@ buttonFish.forEach(fish => {
         }
         
         //Iterates through all buttons to change the background colour to grey and text to white
-        for (var i = 0; i < buttonFish.length; i++) {
+        let i = 0;
+        while (i < buttonFish.length) {
             buttonFish[i].style.backgroundColor = "rgb(80,80,80)";
             buttonFish[i].style.color = "white";
-        };
+            i++;
+        }
 
         //Selected button has a different style to indicate selection
         fish.style.backgroundColor = "white";
         fish.style.color = "black";
 
         defaultMultiInput()
-
-        console.log(fishId)
     })
 });
 
@@ -86,7 +87,6 @@ buttonPara.forEach(link => {
             return
         }
 
-        var i;
         paraId = this.id;
 
         if (paraId !== "All") {
@@ -100,15 +100,12 @@ buttonPara.forEach(link => {
             document.getElementById("multiPara").style.display = "block"
         }
         
-        info.classList.remove("infoani");
-        info.classList.add("infoani");
-
         //Reset input and output values
         input.value = "";
         output.innerHTML = "Awaiting value..."
         output.style.backgroundColor = "rgb(255,255,255,0.5)"
 
-        //additional information on temperature is given when pre-installed fish is selected
+        //Additional information on temperature is given when pre-installed fish is selected
         if (paraId == "Temperature") {
             if (data.fish[fishId].addinfo) {
                 addInfo.style.display = "block";
@@ -124,8 +121,10 @@ buttonPara.forEach(link => {
         enter.style.display = "block";
 
         //Iterates through all buttons to change the background colour to grey
-        for (i = 0; i < buttonPara.length; i++) {
+        let i = 0;
+        while (i < buttonPara.length) {
             buttonPara[i].style.backgroundColor = "rgb(80,80,80)";
+            i++;
         };
 
         //Repeated if statements check the id of the button to determine which button should change colour to indicate selection
@@ -153,7 +152,6 @@ buttonPara.forEach(link => {
             content.style.backgroundColor = "rgb(108, 71, 163)";
             link.style.backgroundColor = "rgb(108, 71, 163)";
         };
-        console.log(fishId)
     });
 })
 
@@ -189,9 +187,9 @@ input.oninput = function() {
 //For 'All' tab: Runs function when any of the inputs are updated
 inputMulti.forEach(inputMultiPara => {
     inputMultiPara.oninput = function() {
-        var i;
         //Checks input at index i, takes the parameter in the object at index i, and compares it to the values in the JSON file accordingly
-        for (i = 0; i < inputMulti.length; i++) {
+        let i = 0;
+        while (i < inputMulti.length) {
             if (inputMulti[i].value > data.fish[fishId][parameter[i]][1]) {
                 inputMulti[i].style.backgroundColor = "rgb(255,140,128)";
             } else if (inputMulti[i].value < data.fish[fishId][parameter[i]][0]) {
@@ -199,6 +197,7 @@ inputMulti.forEach(inputMultiPara => {
             } else {
                 inputMulti[i].style.backgroundColor = "rgb(138,252,136)";
             }
+            i++;
         }
     }
 })
@@ -244,35 +243,37 @@ submitButton.addEventListener('click', function() {
     };
 
     //Goes through each row, then each column (referred to as cells), and takes the value and pushes it into the customFishData array
-    for (var i = 1; i < tableData.rows.length; i++) {
-        var tableRow = tableData.rows[i];
+    let j = 1;
+    while (j < tableData.rows.length) {
+        var tableRow = tableData.rows[j];
         //Seperate loop for first row as there are NA cells
-        if (i == 1) {
-            for (var j = 1; j < 4; j++) {
+        if (j == 1) {
+            for (var k = 1; k < 4; k++) {
                 //Checks for negative values, returns if present
-                if (parseFloat(tableRow.cells[j].children[0].value) < 0) {
+                if (parseFloat(tableRow.cells[k].children[0].value) < 0) {
                     warningError.style.display = "block"
                     warningError.innerHTML = "Error: Negative value detected!<br><br>Please remove the negative sign from the corresponding cell in the table above!"
                     return
                 } else {
-                    customFishData[parameter[j-1]].push(parseFloat(tableRow.cells[j].children[0].value));
+                    customFishData[parameter[k-1]].push(parseFloat(tableRow.cells[k].children[0].value));
                 }
             }
             //Minimum value for nitrite and ammonia is zero
             customFishData['Nitrite'].push(0);
             customFishData['Ammonia'].push(0);
         }
-        if (i == 2) {
-            for (var j = 1; j < 6; j++) {
-                if (parseFloat(tableRow.cells[j].children[0].value) < 0) {
+        if (j == 2) {
+            for (var k = 1; k < 6; k++) {
+                if (parseFloat(tableRow.cells[k].children[0].value) < 0) {
                     warningError.style.display = "block"
                     warningError.innerHTML = "Error: Negative value detected!<br><br>Please remove the negative sign from the corresponding cell in the table above!"
                     return
                 } else {
-                    customFishData[parameter[j-1]].push(parseFloat(tableRow.cells[j].children[0].value));
+                    customFishData[parameter[k-1]].push(parseFloat(tableRow.cells[k].children[0].value));
                 }
             }
-        } 
+        }
+        j++;
     }
 
     //Checks if the fish in the name input already exists
@@ -309,7 +310,8 @@ submitButton.addEventListener('click', function() {
 selectedFish.addEventListener('change', function() {
     fishName.value = selectedFish.value;
     fishId = selectedFish.value;
-    for (var i = 1; i < tableData.rows.length; i++) {
+    let i = 1;
+    while (i < tableData.rows.length) {
         var tableRow = tableData.rows[i];
         //Seperate loop for first row as there are NA cells
         if (i == 1) {
@@ -322,7 +324,8 @@ selectedFish.addEventListener('change', function() {
                 tableRow.cells[j].children[0].value = data.fish[fishId][parameter[j-1]][1];
             }
         }
-    }
+        i++;
+    } 
     defaultMultiInput()
 })
 
@@ -344,12 +347,13 @@ simulButton.addEventListener('click', function() {
 })
 
 function simulationTester() {
-    var i, random, newValue;
+    var random, newValue;
+    let i = 0;
 
-    for (i = 0; i < inputMulti.length; i++) {
+    while (i < inputMulti.length) {
         //Generates a random number between 0 and 9 inclusive
         random = Math.floor(Math.random() * 10);
-        //30% chance of changing
+        //30% chance of increasing
         if (random <= 2) {
             //Nitrates have bigger ranges, thus the simulator adds or subtracts 1 instead of 0.1
             if (i == 2) {
@@ -370,7 +374,9 @@ function simulationTester() {
             //Checks pH is not over 14
             if (i == 1 && newValue > 14) {newValue = 14;}
             inputMulti[i].value = newValue
-        } else if (random >= 7) {
+        } 
+        //30% chance of decreasing
+        else if (random >= 7) {
             if (i == 2) {
                 newValue = Math.round((parseFloat(inputMulti[i].value) - 1) * 100) / 100
             } else if (i == 1 || i == 3 || i == 4) {
@@ -394,5 +400,6 @@ function simulationTester() {
         } else {
             inputMulti[i].style.backgroundColor = "rgb(138,252,136)";
         }
+        i++;
     }
 }
